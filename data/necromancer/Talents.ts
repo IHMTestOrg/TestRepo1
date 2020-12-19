@@ -16,5 +16,6 @@ SUMMON_ABOMINATION.ClassMask.match(IMPROVED_FIREBALL.Effects.get(0))
 
 // Change the casttime reduction to  seconds (9000ms)
 IMP_ABOMINATION.Effects.get(0).BasePoints.set(-9000)
+IMP_ABOMINATION.Icon.set('Interface\\Icons\\Achievement_Boss_patchwerk.blp')
 
 export const IMP_ABOMINATION_TALENT = NECROMANCY.addTalent('tswow-necromancer','imp-abomination-talent',0,1,[IMP_ABOMINATION.ID])

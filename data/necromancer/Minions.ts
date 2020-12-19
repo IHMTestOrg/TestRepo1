@@ -1,7 +1,6 @@
 import { std } from "tswow-stdlib";
-import { SQL } from 'wotlkdata';
 import { TotemType } from "tswow-stdlib/Totem/TotemType";
-import { NECROMANCER_CLASS, NECROMANCY_SKILL } from "./Necromancer";
+import { NECROMANCY_SKILL } from "./Necromancer";
 
 const totems : TotemType[] = ['EARTH','AIR','WATER','FIRE']
 
@@ -16,11 +15,15 @@ function makeSummon(index: number, name: string, displayName: string, modelId: n
     summon_spell.SkillLines.add(NECROMANCY_SKILL.ID).setAutolearn();
     summon_spell.Name.enGB.set(`Summon ${displayName} ${totems[index]}`)
     summon_spell.Icon.set(icon);
-    SQL.playercreateinfo_spell_custom.add(0, 1<<(NECROMANCER_CLASS.ID-1), summon_spell.ID)
-        .Note.set(`Necromancer cool`);
+    summon_spell.Cooldown.set(0,0,0,0)
 }
 
 for(let i=0;i<totems.length;++i){
+    const controllers = std.Spells.TotemCreatures
+        .createControllers('tswow-necromancer',`control-${i}`,[i],['Attack'])
+    controllers.Attack?.SkillLines.add(NECROMANCY_SKILL.ID).setAutolearn();
+    controllers.Attack?.Name.enGB.set(`Attack ${i}`);
+
     makeSummon(i, 'skeleton', 'Skeleton',9790,'Interface\\Icons\\Spell_Shadow_RaiseDead.blp');
     makeSummon(i, 'ghoul', 'Ghoul', 416,'Interface\\Icons\\Ability_Creature_Disease_02.blp');
     makeSummon(i, 'warlord', 'Warlord', 775,'Interface\\Icons\\INV_Belt_13.blp',0.8);

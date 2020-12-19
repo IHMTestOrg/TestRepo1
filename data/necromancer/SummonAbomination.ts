@@ -7,3 +7,4 @@ SUMMON_ABOMINATION.Name.enGB.set('Summon Abomination');
 SUMMON_ABOMINATION.Effects.get(0).MiscValueA.set(8543);
 SUMMON_ABOMINATION.SkillLines.add(NECROMANCY_SKILL.ID)
 SUMMON_ABOMINATION.Icon.set('Interface\\Icons\\Achievement_Boss_patchwerk.blp')
+SUMMON_ABOMINATION.CastTime.set(0,0,0)

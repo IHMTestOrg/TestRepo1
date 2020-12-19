@@ -3,11 +3,21 @@ import { std } from 'tswow-stdlib';
 export const NECROMANCER_CLASS = 
     std.Classes.create('mymod','necromancer','NECROMANCER','MAGE');
 
-NECROMANCER_CLASS.addRaces(['HUMAN','ORC','BLOODELF']);
+export const NECROMANCER_ROBE =
+    std.Items.create('tswow-necromancer','cls',56).displayRow.Texture.set
+
+NECROMANCER_CLASS.addRaces(['HUMAN','ORC','BLOODELF','UNDEAD']);
 NECROMANCER_CLASS.Name.enGB.set('Necromancer');
 
 NECROMANCER_CLASS.EquipSkills.Staves.setAuto();
+NECROMANCER_CLASS.EquipSkills.Cloth.setAuto();
+NECROMANCER_CLASS.EquipSkills.Polearms.setAuto();
+NECROMANCER_CLASS.StartGear.Mainhand.set(41821)
+NECROMANCER_CLASS.StartGear.Ranged.set(39134)
+NECROMANCER_CLASS.StartGear.Chest.set(42844)
+
 NECROMANCER_CLASS.UI.tcoords.set(0.5,0.75,0.5,0.75);
+NECROMANCER_CLASS.UI.classButton.setPos(85,-420)
 
 // Change the stats
 NECROMANCER_CLASS.UI.color.set(0xcc0077)
@@ -16,7 +26,7 @@ NECROMANCER_CLASS.UI.info.add('- Light Armor (Cloth)')
 NECROMANCER_CLASS.UI.info.add('- Controls multiple undead servants')
 NECROMANCER_CLASS.UI.info.add('- Uses mana as a resource')
 NECROMANCER_CLASS.UI.description
-    .set("Necromancers raise and control the undead, and brings plague and destruction on their foes. Necromancy is strictly forbidden in both Horde and Alliance societies, and those who practice it can only do so in absolute secrecy.")
+    .set("Necromancers raise and control the undead, and brings plague and destruction on their enemies. Necromancy is strictly forbidden in both Horde and Alliance societies, and those who practice it can only do so in absolute secrecy.")
 
 // Give all totems
 NECROMANCER_CLASS.Inventory.add(5175, 1);
