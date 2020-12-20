@@ -16,16 +16,16 @@ NECROMANCER_CLASS.StartGear.Mainhand.set(41821)
 NECROMANCER_CLASS.StartGear.Ranged.set(39134)
 NECROMANCER_CLASS.StartGear.Chest.set(42844)
 
-NECROMANCER_CLASS.UI.tcoords.set(0.5,0.75,0.5,0.75);
-NECROMANCER_CLASS.UI.classButton.setPos(85,-420)
+NECROMANCER_CLASS.UI.TCoords.set(0.5,0.75,0.5,0.75);
+NECROMANCER_CLASS.UI.ClassButton.setPos(85,-420)
 
 // Change the stats
-NECROMANCER_CLASS.UI.color.set(0xcc0077)
-NECROMANCER_CLASS.UI.info.add('- Role: Damage, Tank')
-NECROMANCER_CLASS.UI.info.add('- Light Armor (Cloth)')
-NECROMANCER_CLASS.UI.info.add('- Controls multiple undead servants')
-NECROMANCER_CLASS.UI.info.add('- Uses mana as a resource')
-NECROMANCER_CLASS.UI.description
+NECROMANCER_CLASS.UI.Color.set(0xcc0077)
+NECROMANCER_CLASS.UI.Info.add('- Role: Damage, Tank')
+NECROMANCER_CLASS.UI.Info.add('- Light Armor (Cloth)')
+NECROMANCER_CLASS.UI.Info.add('- Controls multiple undead servants')
+NECROMANCER_CLASS.UI.Info.add('- Uses mana as a resource')
+NECROMANCER_CLASS.UI.Description
     .set("Necromancers raise and control the undead, and brings plague and destruction on their enemies. Necromancy is strictly forbidden in both Horde and Alliance societies, and those who practice it can only do so in absolute secrecy.")
 
 // Give all totems
