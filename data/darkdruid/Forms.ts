@@ -22,17 +22,17 @@ const SWARMGUARD_FORM_SHAPESHIFT = DBC.SpellShapeshiftForm.findById(31)
 export const SPIDER_FORM = std.Spells.create('tswow-necromancer','spider-form',5487)
     .Name.set({enGB:'Spider Form'})
     .Icon.set('Interface\\Icons\\Ability_Hunter_Pet_Spider.blp')
-    .SkillLines.add(METAMORPHOSIS.ID).setAutolearn().up()
+    .SkillLines.add(METAMORPHOSIS.ID).setAutolearn().end
     .Effects.get(0).MiscValueA.set(SPIDER_FORM_SHAPESHIFT.ID.get()) 
 
 export const SCORPID_FORM = std.Spells.create('tswow-necromancer','scorpid-form',768)
     .Name.set({enGB:'Scorpid Form'})
     .Icon.set('Interface\\Icons\\Ability_Hunter_Pet_Scorpid.blp')
-    .SkillLines.add(METAMORPHOSIS.ID).setAutolearn().up()
+    .SkillLines.add(METAMORPHOSIS.ID).setAutolearn().end
     .Effects.get(0).MiscValueA.set(SCORPID_FORM_SHAPESHIFT.ID.get())
 
 export const SWARMGUARD_FORM = std.Spells.create('tswow-necromancer','swarmguard-form',24858)
     .Name.set({enGB:'Swarmguard Form'})
     .Icon.set('Interface\\Icons\\Spell_Shadow_CarrionSwarm.blp')
-    .SkillLines.add(METAMORPHOSIS.ID).setAutolearn().up()
+    .SkillLines.add(METAMORPHOSIS.ID).setAutolearn().end
     .Effects.get(0).MiscValueA.set(SWARMGUARD_FORM_SHAPESHIFT.ID.get())

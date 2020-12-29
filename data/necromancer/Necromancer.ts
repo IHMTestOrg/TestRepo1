@@ -4,7 +4,7 @@ export const NECROMANCER_CLASS =
     std.Classes.create('mymod','necromancer','NECROMANCER','MAGE');
 
 export const NECROMANCER_ROBE =
-    std.Items.create('tswow-necromancer','cls',56).displayRow.Texture.set
+    std.Items.create('tswow-necromancer','cls',56).Visual.row.Texture.set
 
 NECROMANCER_CLASS.addRaces(['HUMAN','ORC','BLOODELF','UNDEAD']);
 NECROMANCER_CLASS.Name.enGB.set('Necromancer');

@@ -22,14 +22,14 @@ export const ILLUSION = std.SkillLines
 
 export const TRANSFORM = std.Spells
     .create('tswow-necromancer','disguise',0)
-    .SkillLines.add(ILLUSION.ID).setAutolearn().up()
-    .Effects.add().EffectType.setDummy().up()
+    .SkillLines.add(ILLUSION.ID).setAutolearn().end
+    .Effects.add().EffectType.setDummy().end
     .Icon.set('Interface\\Icons\\Ability_Rogue_Disguise.blp')
     .Visual.cloneFrom(1856,true)
     
 export const SPECIAL_BLINK = std.Spells
     .create('tswow-necromancer','specialblink',2120)
-    .SkillLines.add(ILLUSION.ID).setAutolearn().up()
+    .SkillLines.add(ILLUSION.ID).setAutolearn().end
     .CastTime.set(0,0,0)
 
 SPECIAL_BLINK.Effects.clearAll()

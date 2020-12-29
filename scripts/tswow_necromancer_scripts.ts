@@ -24,17 +24,6 @@ export function Main(events: TSEventHandlers) {
         spell.GetCaster().ToUnit().NearTeleport(dest.x,dest.y,dest.z,spell.GetCaster().ToUnit().GetO());
     });
 
-    // Workaround to set start reputation
-    events.Player.OnLogin((player,first)=>{
-        if(first) {
-            player.SetReputation(ID.TSWOW_NECROMANCER_TSWOW_FACTION,8000);
-            player.SetReputation(ID.TSWOW_NECROMANCER_TSWOW_TC,4000);
-            player.SetReputation(ID.TSWOW_NECROMANCER_TSWOW_KNIGHTS,6000);
-            player.SetReputation(ID.TSWOW_NECROMANCER_TSWOW_YOUR,3000);
-            player.SetReputation(ID.TSWOW_NECROMANCER_TSWOW_CULT_FACTION,9000);
-        }
-    })
-
     events.Player.OnSpellCast((player,spell,skipCheck)=>{
         if(spell.GetEntry()===ID.TSWOW_NECROMANCER_FLAME_STRIKE) {
             const pos : TSPosition = spell.GetTargetDest();

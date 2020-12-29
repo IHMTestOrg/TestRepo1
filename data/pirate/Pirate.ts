@@ -31,15 +31,15 @@ const PIRACY_LINE = std.SkillLines.createClass('tswow-necromancer','piracy',PIRA
 
 export const SHOOT_YA = std.Spells.create('tswow-necromancer','shoot',3044)
     .Power.setEnergy(30)
-    .SkillLines.add(PIRACY_LINE.ID).setAutolearn().up()
+    .SkillLines.add(PIRACY_LINE.ID).setAutolearn().end
     
 export const DISENGAGE = std.Spells.create('tswow-necromancer','disengage',781)
     .Cooldown.set(5000,0,5000,1)
-    .SkillLines.add(PIRACY_LINE.ID).setAutolearn().up()
+    .SkillLines.add(PIRACY_LINE.ID).setAutolearn().end
 
 export const THROW_BOMB = std.Spells.create('tswow-necromancer','throw-bomb',4064)
     .InterruptFlags.OnMovement.clear()
-    .SkillLines.add(PIRACY_LINE.ID).setAutolearn().up()
+    .SkillLines.add(PIRACY_LINE.ID).setAutolearn().end
     .Cooldown.set(2000,0,2000,2)
     .Name.set({enGB:'Throw Bomb'})
 

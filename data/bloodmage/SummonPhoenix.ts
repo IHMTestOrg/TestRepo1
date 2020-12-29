@@ -12,8 +12,8 @@ export const PHOENIX = std.CreatureTemplates
 
 export const SUMMON_PHOENIX = std.Spells
     .create('tswow-necromancer','summon-phoenix', 688)
-    .Effects.get(0).MiscValueA.set(PHOENIX.ID).up()
-    .SkillLines.add(BLOOD_MAGIC_SKILL.ID).up()
+    .Effects.get(0).MiscValueA.set(PHOENIX.ID).end
+    .SkillLines.add(BLOOD_MAGIC_SKILL.ID).end
     .Name.set({enGB:'Summon Phoenix'})
     .Icon.set('Interface\\Icons\\BTNMarkOfFire.blp')
     .CastTime.set(0,0,0)
