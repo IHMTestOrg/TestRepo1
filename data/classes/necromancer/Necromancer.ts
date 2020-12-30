@@ -1,10 +1,11 @@
 import { std } from 'tswow-stdlib';
+import { TSWOW_TESTMODULE } from '../../tswow-testmodule';
 
 export const NECROMANCER_CLASS = 
-    std.Classes.create('mymod','necromancer','NECROMANCER','MAGE');
+    std.Classes.create(TSWOW_TESTMODULE,'necromancer','NECROMANCER','MAGE');
 
 export const NECROMANCER_ROBE =
-    std.Items.create('tswow-necromancer','cls',56).Visual.row.Texture.set
+    std.Items.create(TSWOW_TESTMODULE,'cls',56).Visual.row.Texture.set
 
 NECROMANCER_CLASS.addRaces(['HUMAN','ORC','BLOODELF','UNDEAD']);
 NECROMANCER_CLASS.Name.enGB.set('Necromancer');
@@ -42,12 +43,12 @@ NECROMANCER_CLASS.Stats.SpellCrit.set((x,level)=>0.1*level)
 NECROMANCER_CLASS.Stats.MeleeCrit.set((x,level)=>0.1*level)
 
 export const NECROMANCY_SKILL = std.SkillLines
-    .createClass('tswow-necromancer','necromancy-skill',NECROMANCER_CLASS.ID)
+    .createClass(TSWOW_TESTMODULE,'necromancy-skill',NECROMANCER_CLASS.ID)
 NECROMANCY_SKILL.Name.enGB.set(`Necromancy`)
 NECROMANCY_SKILL.Icon.set('Interface\\Icons\\Spell_Shadow_ShadeTrueSight.blp')
 
 // Truly the epitome of creativity
 export const DEATH_SKILL = std.SkillLines
-    .createClass('tswow-necromancer','death-skill',NECROMANCER_CLASS.ID)
+    .createClass(TSWOW_TESTMODULE,'death-skill',NECROMANCER_CLASS.ID)
 DEATH_SKILL.Name.enGB.set(`Death`)
 DEATH_SKILL.Icon.set('Interface\\Icons\\Spell_Shadow_DeathCoil')

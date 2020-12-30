@@ -1,0 +1,1 @@
+export const TSWOW_TESTMODULE = 'tswow-testmodule'

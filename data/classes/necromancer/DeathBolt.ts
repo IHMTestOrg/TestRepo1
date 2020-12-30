@@ -1,8 +1,9 @@
 import { std } from 'tswow-stdlib';
+import { TSWOW_TESTMODULE } from '../../tswow-testmodule';
 import { DEATH_SKILL } from './Necromancer';
 
 export const DEATH_BOLT =
-    std.Spells.create('tswow-necromancer','death-bolt',686)
+    std.Spells.create(TSWOW_TESTMODULE,'death-bolt',686)
 DEATH_BOLT.Name.enGB.set('Death Bolt')
 DEATH_BOLT.Description.enGB.set('A bolt of Death!');
 

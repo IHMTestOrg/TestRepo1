@@ -1,15 +1,16 @@
 import { std } from "tswow-stdlib";
+import { TSWOW_TESTMODULE } from "../../tswow-testmodule";
 
 const DRUID_ROBE = std.Items
-    .create('tswow-necromancer','druid-robe',20407)
+    .create(TSWOW_TESTMODULE,'druid-robe',20407)
     .RequiredLevel.set(1)
 
 const DRUID_SHOULDERS = std.Items
-    .create('tswow-necromancer','druid-shoulders',20406)
+    .create(TSWOW_TESTMODULE,'druid-shoulders',20406)
     .RequiredLevel.set(1)
 
 export const DARK_DRUID = std.Classes
-    .create('tswow-necromancer','darkdruid','DARKDRUID','MAGE')
+    .create(TSWOW_TESTMODULE,'darkdruid','DARKDRUID','MAGE')
     .addRaces(['HUMAN','NIGHTELF','DWARF','ORC','UNDEAD'])
     .Name.set({enGB:'Dark Druid'})
     .EquipSkills.Staves.setAuto()
@@ -25,11 +26,11 @@ export const DARK_DRUID = std.Classes
     .UI.Description.set('Dark druids are shunned by both Alliance and Horde druid organizations, as their forms of worship are often seen as taboo. Just like their other druid brethren, Dark Druids are shapeshifters, but has a particular focus on insectoid and reptile forms.')
 
 export const METAMORPHOSIS = std.SkillLines
-    .createClass('tswow-necromancer','Metamorphosis',DARK_DRUID.ID)
+    .createClass(TSWOW_TESTMODULE,'Metamorphosis',DARK_DRUID.ID)
     .Name.set({enGB:'Metamorphosis'})
     .Icon.set('Interface\\Icons\\Spell_Shadow_Metamorphosis.blp')
 
 export const DARK_MAGIC = std.SkillLines
-    .createClass('tswow-necromancer','dark-magic',DARK_DRUID.ID)
+    .createClass(TSWOW_TESTMODULE,'dark-magic',DARK_DRUID.ID)
     .Name.set({enGB:'Dark Magic'})
     .Icon.set('Interface\\Icons\\Spell_Shadow_SealOfKings.blp')
