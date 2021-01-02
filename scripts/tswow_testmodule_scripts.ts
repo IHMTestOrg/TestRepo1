@@ -1,4 +1,5 @@
 import { AccountTests } from "./AccountTests";
+import { BasicTests } from "./BasicTests";
 import { FormulaTests } from "./FormulaTests";
 import { GroupTests } from "./GroupTests";
 import { GuildTests } from "./GuildTests";
@@ -53,4 +54,5 @@ export function Main(events: TSEventHandlers) {
     GuildTests(events);
     GroupTests(events);
     FormulaTests(events);
+    BasicTests(events);
 }
