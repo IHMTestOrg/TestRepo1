@@ -7,6 +7,14 @@ export function PlayerTests(events: TSEventHandlers) {
         player.SendBroadcastMessage('You were just bound to an instance');
     });
 
+    events.Player.OnChatGuild((player,type,lang,msg,guild)=>{
+        console.log("Guild message!");
+    });
+
+    events.Player.OnChatGroup((player,type,lang,msg,group)=>{
+        console.log("Party message!");
+    });
+
     events.Player.OnCreate((player)=>{
         console.log("A player was created");
     });

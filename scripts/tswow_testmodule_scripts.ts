@@ -1,9 +1,14 @@
 import { AccountTests } from "./AccountTests";
-import { BasicTests } from "./BasicTests";
+import { StringTests } from "./StringTests";
+import { ClassTests } from "./ClassTests";
+import { CreatureTests } from "./CreatureTests";
+import { DictionaryTests } from "./DictionaryTests";
 import { FormulaTests } from "./FormulaTests";
 import { GroupTests } from "./GroupTests";
 import { GuildTests } from "./GuildTests";
 import { ID } from "./ID";
+import { ListTests } from "./ListTests";
+import { MethodsTests } from "./MethodsTests";
 import { PlayerTests } from "./PlayerTests";
 import { SpellTests } from "./SpellTests";
 import { UnitTests } from "./UnitTests";
@@ -11,7 +16,7 @@ import { WorldTests } from "./WorldTests";
 
 export function Main(events: TSEventHandlers) {
     //Register your events here!
-    events.Spells.OnCast(ID.TSWOW_TESTMODULE_DISGUISE, (spell)=>{
+    events.SpellID.OnCast(ID.TSWOW_TESTMODULE_DISGUISE, (spell)=>{
         // No null check
         if(spell.GetCaster().IsNull()) {
             return;
@@ -28,12 +33,12 @@ export function Main(events: TSEventHandlers) {
         spell.GetCaster().ToUnit().SetDisplayId(spell.GetCaster().ToPlayer().GetSelection().ToUnit().GetDisplayId());
     });
 
-    events.Spells.OnCast(ID.TSWOW_TESTMODULE_SPECIALBLINK, (spell)=>{
+    events.SpellID.OnCast(ID.TSWOW_TESTMODULE_SPECIALBLINK, (spell)=>{
         const dest : TSPosition = spell.GetTargetDest();
         spell.GetCaster().ToUnit().NearTeleport(dest.x,dest.y,dest.z,spell.GetCaster().ToUnit().GetO());
     });
 
-    events.Spells.OnCast(ID.TSWOW_TESTMODULE_FLAME_STRIKE, (spell)=>{
+    events.SpellID.OnCast(ID.TSWOW_TESTMODULE_FLAME_STRIKE, (spell)=>{
         if(!spell.GetCaster().IsUnit()) {
             return;
         }
@@ -47,6 +52,7 @@ export function Main(events: TSEventHandlers) {
     });
 
     SpellTests(events);
+    CreatureTests(events);
     PlayerTests(events);
     UnitTests(events);
     AccountTests(events);
@@ -54,5 +60,9 @@ export function Main(events: TSEventHandlers) {
     GuildTests(events);
     GroupTests(events);
     FormulaTests(events);
-    BasicTests(events);
+    StringTests(events);
+    MethodsTests(events);
+    DictionaryTests(events);
+    ListTests(events);
+    ClassTests(events);
 }
