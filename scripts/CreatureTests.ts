@@ -1,4 +1,8 @@
 export function CreatureTests(events: TSEventHandlers) {
+    events.CreatureID.OnJustEnteredCombat(3100,(creature,target)=>{
+        console.log("A boar entered combat!");
+    });
+
     events.Creatures.OnCharmed((c,isnew)=>{
         console.log("A creature was charmed");
     });
