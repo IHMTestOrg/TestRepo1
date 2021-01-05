@@ -65,7 +65,7 @@ export function DatabaseTests(events: TSEventHandlers) {
 
     player.save();
 
-    let loaded = LoadRow(PlayerTest,'player = 1007688');
+    let loaded = LoadRows(PlayerTest,'player = 1007688');
     console.log("[Database] This is Testname:",loaded.get(0).name)
     loaded.get(0).name = "New Name";
     loaded.get(0).save();
@@ -73,10 +73,10 @@ export function DatabaseTests(events: TSEventHandlers) {
     let chr = new CharactersTest(1);
     chr.save();
 
-    const chrload = LoadRow(CharactersTest,'id=1');
+    const chrload = LoadRows(CharactersTest,'id=1');
     console.log("[Database] This is 1: ",chrload.length);
 
-    const chrload2 = LoadRow(CharactersTest,'id=2');
+    const chrload2 = LoadRows(CharactersTest,'id=2');
     console.log("[Database] This is 0: ",chrload2.length);
 
     let auth = new AuthTest(10);
