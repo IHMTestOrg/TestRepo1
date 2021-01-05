@@ -20,6 +20,13 @@ class ClassExtension extends TestClass {
     }
 }
 
+class CollectionClass extends TSClass {
+    arr: TSArray<int> = [];
+    dict : TSDictionary<int,int> = MakeDictionary<int,int>({1:10})
+}
+
+const globalCollection : CollectionClass = new CollectionClass();
+
 export function ClassTests(events: TSEventHandlers) {
     let g = new TestClass();
     g.outerMethod();
@@ -28,8 +35,14 @@ export function ClassTests(events: TSEventHandlers) {
     e.outerMethod();
     console.log(e.field);
 
-    let arr: TSArray<TestClass> = [new TestClass(), new ClassExtension()];
+    const arr: TSArray<TestClass> = [new TestClass(), new ClassExtension()];
     arr.forEach((v,i)=>{
         v.outerMethod();
+    });
+
+    events.Player.OnSay((player,type,lang,msg)=>{
+        globalCollection.arr.push(10);
+        globalCollection.dict.set(10,25);
+        console.log(globalCollection.stringify());
     });
 }

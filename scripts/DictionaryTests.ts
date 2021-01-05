@@ -1,3 +1,5 @@
+let globalDict : TSDictionary<int,int> = MakeDictionary<int,int>({1:1})
+
 export function DictionaryTests(events: TSEventHandlers) {
     const d1 = MakeDictionary<uint32,string>({
         1: "a",
@@ -27,4 +29,8 @@ export function DictionaryTests(events: TSEventHandlers) {
 
     console.log("[reduce] This is 5: ",d2.reduce((p,k,v)=>p+k,0));
     console.log("[contains] This is true false false:",d2.contains(2),d2.contains(1),d2.contains(4));
+
+    events.Player.OnSay((player,type,lang,msg)=>{
+        globalDict.set(type,lang);
+    });
 }
