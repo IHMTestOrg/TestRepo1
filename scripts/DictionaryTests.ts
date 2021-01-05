@@ -1,5 +1,10 @@
 let globalDict : TSDictionary<int,int> = MakeDictionary<int,int>({1:1})
 
+function dictionaryFunction(dict: TSDictionary<int,int>) {
+    console.log("This is {1:2}",dict);
+    dict.set(2,3);
+}
+
 export function DictionaryTests(events: TSEventHandlers) {
     const d1 = MakeDictionary<uint32,string>({
         1: "a",
@@ -33,4 +38,11 @@ export function DictionaryTests(events: TSEventHandlers) {
     events.Player.OnSay((player,type,lang,msg)=>{
         globalDict.set(type,lang);
     });
+
+    const dict : TSDictionary<int,int> = MakeDictionary<int,int>({
+        1: 2
+    });
+
+    dictionaryFunction(dict);
+    console.log("This is {1:2,2:3}: ",dict);
 }

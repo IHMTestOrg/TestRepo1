@@ -1,5 +1,10 @@
 let globalArr: TSArray<int32> = [];
 
+function listFunction(arr: TSArray<uint32>) {
+    console.log("This is [1,2,3]: ",arr);
+    arr.push(1007688);
+}
+
 export function ListTests(events: TSEventHandlers) {
     let ls1: TSArray<int32> = [1,2,3];
     console.log("[reduce] This is 6:",ls1.reduce((p,c,i)=>p+c,0));
@@ -37,4 +42,8 @@ export function ListTests(events: TSEventHandlers) {
     events.Player.OnSay((player,type,lang,msg)=>{
         globalArr.push(type);
     });
+
+    const list: TSArray<uint32> = [1,2,3];
+    listFunction(list);
+    console.log("This is [1,2,3,1007688]:",list);
 }
