@@ -13,6 +13,7 @@ import { PlayerTests } from "./PlayerTests";
 import { SpellTests } from "./SpellTests";
 import { UnitTests } from "./UnitTests";
 import { WorldTests } from "./WorldTests";
+import { DatabaseTests } from "./DatabaseTests";
 
 export function Main(events: TSEventHandlers) {
     //Register your events here!
@@ -65,4 +66,5 @@ export function Main(events: TSEventHandlers) {
     DictionaryTests(events);
     ListTests(events);
     ClassTests(events);
+    DatabaseTests(events);
 }
