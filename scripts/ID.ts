@@ -1,17 +1,4 @@
 export namespace ID {
-    export const TSWOW_TESTMODULE_BLOODMAGE_CLASS : uint32 = GetID("ChrClasses","tswow-testmodule","bloodmage-class");
-    export const TSWOW_TESTMODULE_DARKDRUID : uint32 = GetID("ChrClasses","tswow-testmodule","darkdruid");
-    export const TSWOW_TESTMODULE_ILLUSIONIST : uint32 = GetID("ChrClasses","tswow-testmodule","illusionist");
-    export const TSWOW_TESTMODULE_NECROMANCER : uint32 = GetID("ChrClasses","tswow-testmodule","necromancer");
-    export const TSWOW_TESTMODULE_PIRATE : uint32 = GetID("ChrClasses","tswow-testmodule","pirate");
-    export const TSWOW_TESTMODULE_BLOOD : uint32 = GetID("SkillLineAbility","tswow-testmodule","blood");
-    export const TSWOW_TESTMODULE_METAMORPHOSIS : uint32 = GetID("SkillLineAbility","tswow-testmodule","Metamorphosis");
-    export const TSWOW_TESTMODULE_DARK_MAGIC : uint32 = GetID("SkillLineAbility","tswow-testmodule","dark-magic");
-    export const TSWOW_TESTMODULE_ILLUSION : uint32 = GetID("SkillLineAbility","tswow-testmodule","illusion");
-    export const TSWOW_TESTMODULE_NECROMANCY_SKILL : uint32 = GetID("SkillLineAbility","tswow-testmodule","necromancy-skill");
-    export const TSWOW_TESTMODULE_DEATH_SKILL : uint32 = GetID("SkillLineAbility","tswow-testmodule","death-skill");
-    export const TSWOW_TESTMODULE_PIRACY : uint32 = GetID("SkillLineAbility","tswow-testmodule","piracy");
-    export const TSWOW_TESTMODULE_PIRATE_LANGUAGE_SKILL : uint32 = GetID("SkillLineAbility","tswow-testmodule","pirate_language_skill");
     export const TSWOW_TESTMODULE_BLOOD_BOLT : uint32 = GetID("Spell","tswow-testmodule","blood-bolt");
     export const TSWOW_TESTMODULE_FLAME_STRIKE_SMALL : uint32 = GetID("Spell","tswow-testmodule","flame-strike-small");
     export const TSWOW_TESTMODULE_FLAME_STRIKE : uint32 = GetID("Spell","tswow-testmodule","flame-strike");
@@ -57,6 +44,19 @@ export namespace ID {
     export const TSWOW_TESTMODULE_DISENGAGE : uint32 = GetID("Spell","tswow-testmodule","disengage");
     export const TSWOW_TESTMODULE_THROW_BOMB : uint32 = GetID("Spell","tswow-testmodule","throw-bomb");
     export const TSWOW_TESTMODULE_PIRATE_LANGUAGE_SPELL : uint32 = GetID("Spell","tswow-testmodule","pirate_language_spell");
+    export const TSWOW_TESTMODULE_BLOODMAGE_CLASS : uint32 = GetID("ChrClasses","tswow-testmodule","bloodmage-class");
+    export const TSWOW_TESTMODULE_DARKDRUID : uint32 = GetID("ChrClasses","tswow-testmodule","darkdruid");
+    export const TSWOW_TESTMODULE_ILLUSIONIST : uint32 = GetID("ChrClasses","tswow-testmodule","illusionist");
+    export const TSWOW_TESTMODULE_NECROMANCER : uint32 = GetID("ChrClasses","tswow-testmodule","necromancer");
+    export const TSWOW_TESTMODULE_PIRATE : uint32 = GetID("ChrClasses","tswow-testmodule","pirate");
+    export const TSWOW_TESTMODULE_BLOOD : uint32 = GetID("SkillLineAbility","tswow-testmodule","blood");
+    export const TSWOW_TESTMODULE_METAMORPHOSIS : uint32 = GetID("SkillLineAbility","tswow-testmodule","Metamorphosis");
+    export const TSWOW_TESTMODULE_DARK_MAGIC : uint32 = GetID("SkillLineAbility","tswow-testmodule","dark-magic");
+    export const TSWOW_TESTMODULE_ILLUSION : uint32 = GetID("SkillLineAbility","tswow-testmodule","illusion");
+    export const TSWOW_TESTMODULE_NECROMANCY_SKILL : uint32 = GetID("SkillLineAbility","tswow-testmodule","necromancy-skill");
+    export const TSWOW_TESTMODULE_DEATH_SKILL : uint32 = GetID("SkillLineAbility","tswow-testmodule","death-skill");
+    export const TSWOW_TESTMODULE_PIRACY : uint32 = GetID("SkillLineAbility","tswow-testmodule","piracy");
+    export const TSWOW_TESTMODULE_PIRATE_LANGUAGE_SKILL : uint32 = GetID("SkillLineAbility","tswow-testmodule","pirate_language_skill");
     export const TSWOW_TESTMODULE_PHOENIX : uint32 = GetID("creature_template","tswow-testmodule","phoenix");
     export const TSWOW_TESTMODULE_SCARAB : uint32 = GetID("creature_template","tswow-testmodule","scarab");
     export const TSWOW_TESTMODULE_SKELETON_0 : uint32 = GetID("creature_template","tswow-testmodule","skeleton-0");
