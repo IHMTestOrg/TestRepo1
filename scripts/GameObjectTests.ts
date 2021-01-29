@@ -1,0 +1,18 @@
+export function GameObjectTests(events: TSEventHandlers) {
+    events.GameObjects.OnCreate((obj,c)=>{})
+    events.GameObjects.OnCreate((obj,c)=>{})
+    events.GameObjects.OnDamaged((obj,doh)=>{})
+    events.GameObjects.OnDestroyed((obj,des)=>{})
+    events.GameObjects.OnDialogStatus((obj,p)=>{})
+    events.GameObjects.OnGOStateChanged((obj,state)=>{})
+    events.GameObjects.OnGenerateFishLoot((obj,p,l,i)=>{})
+    events.GameObjects.OnGenerateLoot((obj,pl)=>{})
+    events.GameObjects.OnGossipHello((obj,p,can)=>{})
+    events.GameObjects.OnGossipSelect((obj,pl,menu,sel,can)=>{})
+    events.GameObjects.OnGossipSelectCode((obj,pl,menu,sel,tex,can)=>{})
+    events.GameObjects.OnLootStateChanged((obj,state,changer)=>{})
+    events.GameObjects.OnQuestAccept((obj,pl,q)=>{})
+    events.GameObjects.OnRemove((obj)=>{})
+    events.GameObjects.OnUpdate((obj,diff)=>{})
+    events.GameObjects.OnUse((obj,user,can)=>{})
+}

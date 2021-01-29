@@ -14,6 +14,10 @@ import { SpellTests } from "./SpellTests";
 import { UnitTests } from "./UnitTests";
 import { WorldTests } from "./WorldTests";
 import { DatabaseTests } from "./DatabaseTests";
+import { SubdirTest } from "./subdir/SubdirTest";
+import { MapTests } from "./MapTests";
+import { GameObjectTests } from "./GameObjectTests";
+import { MoreClassTests } from "./MoreClassTests";
 
 export function Main(events: TSEventHandlers) {
     //Register your events here!
@@ -61,10 +65,15 @@ export function Main(events: TSEventHandlers) {
     GuildTests(events);
     GroupTests(events);
     FormulaTests(events);
+
     StringTests(events);
     MethodsTests(events);
     DictionaryTests(events);
     ListTests(events);
     ClassTests(events);
     DatabaseTests(events);
+    MapTests(events);
+    GameObjectTests(events);
+    SubdirTest(events);
+    MoreClassTests(events);
 }

@@ -98,4 +98,33 @@ export function CreatureTests(events: TSEventHandlers) {
     events.Creatures.OnWaypointStarted((c,i,p)=>{
         console.log("Waypoint started");
     });
+
+    events.Creatures.OnGenerateLoot((c,k)=>{
+        console.log("Loot generated");
+    });
+
+    events.Creatures.OnGeneratePickPocketLoot((c,p,l)=>{
+        p.SendBroadcastMessage("Generating pickpocket loot");
+    });
+
+    events.Creatures.OnGenerateSkinningLoot((c,p,l)=>{
+        p.SendBroadcastMessage("Generating skinning loot");
+    });
+
+    events.Creatures.OnCanGeneratePickPocketLoot((c,p,can)=>{
+        p.SendBroadcastMessage("Checking if can generate pickpocket loot");
+    });
+
+    events.Creatures.OnGossipHello((c,p,ca)=>{
+        p.SendBroadcastMessage("Gossip Hello");
+    })
+
+    events.Creatures.OnGossipSelect((c,p,m,s,cancel)=>{
+        p.SendBroadcastMessage("Gossip select");
+    });
+
+    events.Creatures.OnGossipSelectCode((c,p,m,s,code,cancel)=>{
+        p.SendBroadcastMessage("Gossip select code");
+    });
+
 }

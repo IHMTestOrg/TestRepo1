@@ -9,7 +9,6 @@ class TestClass {
     field: int32 = 25;
     inner: InnerClass = new InnerClass();
     outerMethod() {
-        console.log("Outer method called!");
         this.inner.innerMethod();
     }
 }
@@ -30,8 +29,8 @@ const globalCollection : CollectionClass = new CollectionClass();
 export function ClassTests(events: TSEventHandlers) {
     let g = new TestClass();
     g.outerMethod();
-
     let e = new ClassExtension();
+
     e.outerMethod();
     console.log(e.field);
 
