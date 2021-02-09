@@ -18,11 +18,10 @@ import { SubdirTest } from "./subdir/SubdirTest";
 import { MapTests } from "./MapTests";
 import { GameObjectTests } from "./GameObjectTests";
 import { MoreClassTests } from "./MoreClassTests";
+import { AddonTests } from "./AddonTests";
 
 export function Main(events: TSEventHandlers) {
-    //Register your events here!
     events.SpellID.OnCast(ID.TSWOW_TESTMODULE_DISGUISE, (spell)=>{
-        // No null check
         if(spell.GetCaster().IsNull()) {
             return;
         }
@@ -76,4 +75,5 @@ export function Main(events: TSEventHandlers) {
     GameObjectTests(events);
     SubdirTest(events);
     MoreClassTests(events);
+    AddonTests(events);
 }

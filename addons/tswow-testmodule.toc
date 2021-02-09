@@ -1,0 +1,5 @@
+## Interface: 30300
+## Title: tswow-testmodule
+## Version: 1.0
+## Notes: Something
+## Author: Someone
