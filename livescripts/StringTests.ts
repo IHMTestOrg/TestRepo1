@@ -7,7 +7,7 @@ export function StringTests(events: TSEventHandlers) {
     const u32: uint32 = 4294967295;
     const i32: int32 = -2147483648;
     console.log("");
-    console.log("[Concatenation] This should be TSString +-+-+- etc etc",tsstring+" "+u8+" "+i8+" "+u16+" "+i16+" "+u32+" "+i32+" ");
+    //console.log("[Concatenation] This should be TSString +-+-+- etc etc",tsstring+" "+u8+" "+i8+" "+u16+" "+i16+" "+u32+" "+i32+" ");
     console.log("[length] this should be 10: ","1111111111".length);
     console.log("[split] this should be ha-ha-ha","ha ha ha".split(" ").join(" "));
     console.log("[replaceAll] This is kekkek:"+"haha".replace("ha","kek"));
