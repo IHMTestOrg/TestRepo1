@@ -1,5 +1,5 @@
 import { MessageClass } from "../shared/MessageClass";
-import { Events, SendToServer } from "./events";
+import { Events, SendToServer } from "./lib/Events"
 
 const frame = CreateFrame('Frame','UniqueName');
 

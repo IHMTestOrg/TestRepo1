@@ -1,3 +1,26 @@
+
+/*
+ * MIT License
+ * Copyright (c) 2021 TSWoW
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
 import { BinReader } from "./BinReader";
 
 class EventHolder {
@@ -72,7 +95,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnCriteriaUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'CRITERIA_UPDATE',callback)},
+        OnCriteriaUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'CRITERIA_UPDATE',callback)},
 
         /**
          *
@@ -88,7 +111,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnReceivedAchievementList(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'RECEIVED_ACHIEVEMENT_LIST',callback)},
+        OnReceivedAchievementList(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'RECEIVED_ACHIEVEMENT_LIST',callback)},
 
         /**
          *
@@ -116,7 +139,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnActionbarHidegrid(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'ACTIONBAR_HIDEGRID',callback)},
+        OnActionbarHidegrid(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'ACTIONBAR_HIDEGRID',callback)},
 
         /**
          *
@@ -124,7 +147,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnActionbarPageChanged(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'ACTIONBAR_PAGE_CHANGED',callback)},
+        OnActionbarPageChanged(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'ACTIONBAR_PAGE_CHANGED',callback)},
 
         /**
          *
@@ -132,7 +155,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnActionbarShowgrid(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'ACTIONBAR_SHOWGRID',callback)},
+        OnActionbarShowgrid(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'ACTIONBAR_SHOWGRID',callback)},
 
         /**
          * On 4/24/2006, [[Slouken]] stated "ACTIONBAR_SLOT_CHANGED is also sent whenever something changes whether or not the button should be dimmed. The first argument is the slot which changed." This means actions that affect the internal fields of action bar buttons also generate this event for the affected button(s). Examples include the Start and End of casting channeled spells, casting a new buff on yourself, and the cancellation or expiration of a buff on yourself.
@@ -149,7 +172,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnActionbarUpdateCooldown(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'ACTIONBAR_UPDATE_COOLDOWN',callback)},
+        OnActionbarUpdateCooldown(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'ACTIONBAR_UPDATE_COOLDOWN',callback)},
 
         /**
          *
@@ -157,7 +180,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnActionbarUpdateState(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'ACTIONBAR_UPDATE_STATE',callback)},
+        OnActionbarUpdateState(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'ACTIONBAR_UPDATE_STATE',callback)},
 
         /**
          *
@@ -165,7 +188,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnActionbarUpdateUsable(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'ACTIONBAR_UPDATE_USABLE',callback)},
+        OnActionbarUpdateUsable(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'ACTIONBAR_UPDATE_USABLE',callback)},
 
         /**
          *
@@ -173,7 +196,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPetBarUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PET_BAR_UPDATE',callback)},
+        OnPetBarUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PET_BAR_UPDATE',callback)},
 
         /**
          *
@@ -181,7 +204,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnUpdateBonusActionbar(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'UPDATE_BONUS_ACTIONBAR',callback)},
+        OnUpdateBonusActionbar(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'UPDATE_BONUS_ACTIONBAR',callback)},
 
         /**
          *
@@ -189,7 +212,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnUpdateExtraActionbar(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'UPDATE_EXTRA_ACTIONBAR',callback)},
+        OnUpdateExtraActionbar(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'UPDATE_EXTRA_ACTIONBAR',callback)},
 
         /**
          *
@@ -197,16 +220,37 @@ export const Events = {
          *
          * @param args 
          */
-        OnUpdateMultiCastActionbar(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'UPDATE_MULTI_CAST_ACTIONBAR',callback)},
+        OnUpdateMultiCastActionbar(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'UPDATE_MULTI_CAST_ACTIONBAR',callback)},
     },
     AddOns: {
         OnMessage<T>(frame: any, cls: new () => T, handler: (msg: T)=>any) {
             if(
                 eventHolders[frame.GetName()]===undefined || 
                 eventHolders[frame.GetName()].events['CHAT_MSG_ADDON']===undefined) {
-                addEvent(frame,'CHAT_MSG_ADDON',(prefix,msg,type,player)=>{
+                addEvent(frame,'CHAT_MSG_ADDON',(prefix,msg: string,type,player)=>{
                     if(player!==GetUnitName('player',false)) {
                         return;
+                    }
+
+                    // Check if it's a valid base64 string
+                    if(msg.length<6) {
+                        return;
+                    }
+
+                    for(let i=0;i<msg.length;++i) {
+                        let byte = msg.charCodeAt(i);
+                        if(
+                            // numbers
+                            (byte>=48&&byte<=57) ||
+                            // uppercase
+                            (byte>=65&&byte<=90) ||
+                            // lowercase
+                            (byte>=97&&byte<=122) ||
+                            // +, / and =
+                            byte == 43 || byte == 47 || byte == 61 ) {
+                            } else {
+                                return;
+                            }
                     }
 
                     msg = base64_decode(msg)
@@ -268,7 +312,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnAuctionHouseClosed(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'AUCTION_HOUSE_CLOSED',callback)},
+        OnAuctionHouseClosed(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'AUCTION_HOUSE_CLOSED',callback)},
 
         /**
          *
@@ -276,7 +320,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnAuctionHouseDisabled(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'AUCTION_HOUSE_DISABLED',callback)},
+        OnAuctionHouseDisabled(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'AUCTION_HOUSE_DISABLED',callback)},
 
         /**
          *
@@ -292,7 +336,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnAuctionHouseShow(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'AUCTION_HOUSE_SHOW',callback)},
+        OnAuctionHouseShow(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'AUCTION_HOUSE_SHOW',callback)},
 
         /**
          *
@@ -300,7 +344,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnAuctionMultisellFailure(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'AUCTION_MULTISELL_FAILURE',callback)},
+        OnAuctionMultisellFailure(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'AUCTION_MULTISELL_FAILURE',callback)},
 
         /**
          *
@@ -326,7 +370,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnBankframeClosed(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'BANKFRAME_CLOSED',callback)},
+        OnBankframeClosed(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'BANKFRAME_CLOSED',callback)},
 
         /**
          *
@@ -334,7 +378,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnBankframeOpened(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'BANKFRAME_OPENED',callback)},
+        OnBankframeOpened(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'BANKFRAME_OPENED',callback)},
 
         /**
          *
@@ -342,7 +386,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPlayerbankbagslotsChanged(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PLAYERBANKBAGSLOTS_CHANGED',callback)},
+        OnPlayerbankbagslotsChanged(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PLAYERBANKBAGSLOTS_CHANGED',callback)},
 
         /**
          *
@@ -359,7 +403,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnBarberShopAppearanceApplied(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'BARBER_SHOP_APPEARANCE_APPLIED',callback)},
+        OnBarberShopAppearanceApplied(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'BARBER_SHOP_APPEARANCE_APPLIED',callback)},
 
         /**
          *
@@ -367,7 +411,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnBarberShopClose(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'BARBER_SHOP_CLOSE',callback)},
+        OnBarberShopClose(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'BARBER_SHOP_CLOSE',callback)},
 
         /**
          *
@@ -375,7 +419,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnBarberShopOpen(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'BARBER_SHOP_OPEN',callback)},
+        OnBarberShopOpen(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'BARBER_SHOP_OPEN',callback)},
     },
     BattlePet: {
         /**
@@ -387,7 +431,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPetBattleClose(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PET_BATTLE_CLOSE',callback)},
+        OnPetBattleClose(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PET_BATTLE_CLOSE',callback)},
 
         /**
          *
@@ -403,7 +447,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPetBattleOver(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PET_BATTLE_OVER',callback)},
+        OnPetBattleOver(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PET_BATTLE_OVER',callback)},
 
         /**
          *
@@ -438,7 +482,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnCalendarCloseEvent(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'CALENDAR_CLOSE_EVENT',callback)},
+        OnCalendarCloseEvent(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'CALENDAR_CLOSE_EVENT',callback)},
 
         /**
          *
@@ -480,7 +524,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnCalendarUpdateEvent(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'CALENDAR_UPDATE_EVENT',callback)},
+        OnCalendarUpdateEvent(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'CALENDAR_UPDATE_EVENT',callback)},
 
         /**
          *
@@ -488,7 +532,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnCalendarUpdateEventList(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'CALENDAR_UPDATE_EVENT_LIST',callback)},
+        OnCalendarUpdateEventList(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'CALENDAR_UPDATE_EVENT_LIST',callback)},
 
         /**
          *
@@ -496,7 +540,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnCalendarUpdateGuildEvents(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'CALENDAR_UPDATE_GUILD_EVENTS',callback)},
+        OnCalendarUpdateGuildEvents(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'CALENDAR_UPDATE_GUILD_EVENTS',callback)},
 
         /**
          *
@@ -512,7 +556,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnCalendarUpdatePendingInvites(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'CALENDAR_UPDATE_PENDING_INVITES',callback)},
+        OnCalendarUpdatePendingInvites(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'CALENDAR_UPDATE_PENDING_INVITES',callback)},
     },
     ChatInfo: {
         /**
@@ -564,7 +608,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnChannelUiUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'CHANNEL_UI_UPDATE',callback)},
+        OnChannelUiUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'CHANNEL_UI_UPDATE',callback)},
 
         /**
          *
@@ -1682,7 +1726,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnChatServerReconnected(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'CHAT_SERVER_RECONNECTED',callback)},
+        OnChatServerReconnected(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'CHAT_SERVER_RECONNECTED',callback)},
 
         /**
          *
@@ -1690,7 +1734,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnClearBossEmotes(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'CLEAR_BOSS_EMOTES',callback)},
+        OnClearBossEmotes(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'CLEAR_BOSS_EMOTES',callback)},
 
         /**
          *
@@ -1698,7 +1742,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnLanguageListChanged(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'LANGUAGE_LIST_CHANGED',callback)},
+        OnLanguageListChanged(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'LANGUAGE_LIST_CHANGED',callback)},
 
         /**
          *
@@ -1759,7 +1803,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnUpdateChatWindows(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'UPDATE_CHAT_WINDOWS',callback)},
+        OnUpdateChatWindows(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'UPDATE_CHAT_WINDOWS',callback)},
 
         /**
          *
@@ -1767,7 +1811,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnUpdateFloatingChatWindows(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'UPDATE_FLOATING_CHAT_WINDOWS',callback)},
+        OnUpdateFloatingChatWindows(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'UPDATE_FLOATING_CHAT_WINDOWS',callback)},
     },
     Cinematic: {
         /**
@@ -1784,7 +1828,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnCinematicStop(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'CINEMATIC_STOP',callback)},
+        OnCinematicStop(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'CINEMATIC_STOP',callback)},
 
         /**
          *
@@ -1838,7 +1882,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnCombatLogEvent(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'COMBAT_LOG_EVENT',callback)},
+        OnCombatLogEvent(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'COMBAT_LOG_EVENT',callback)},
 
         /**
          * 9 base parameters from CLEU (event, source unit and dest unit)
@@ -1883,7 +1927,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnCombatLogEventUnfiltered(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'COMBAT_LOG_EVENT_UNFILTERED',callback)},
+        OnCombatLogEventUnfiltered(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'COMBAT_LOG_EVENT_UNFILTERED',callback)},
 
         /**
          *
@@ -1900,7 +1944,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnCommentatorEnterWorld(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'COMMENTATOR_ENTER_WORLD',callback)},
+        OnCommentatorEnterWorld(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'COMMENTATOR_ENTER_WORLD',callback)},
 
         /**
          *
@@ -1908,7 +1952,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnCommentatorMapUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'COMMENTATOR_MAP_UPDATE',callback)},
+        OnCommentatorMapUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'COMMENTATOR_MAP_UPDATE',callback)},
 
         /**
          *
@@ -1916,7 +1960,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnCommentatorPlayerUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'COMMENTATOR_PLAYER_UPDATE',callback)},
+        OnCommentatorPlayerUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'COMMENTATOR_PLAYER_UPDATE',callback)},
     },
     CompactUnitFrames: {
         /**
@@ -1925,7 +1969,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnCompactUnitFrameProfilesLoaded(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'COMPACT_UNIT_FRAME_PROFILES_LOADED',callback)},
+        OnCompactUnitFrameProfilesLoaded(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'COMPACT_UNIT_FRAME_PROFILES_LOADED',callback)},
     },
     Console: {
         /**
@@ -1969,7 +2013,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnBagUpdateCooldown(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'BAG_UPDATE_COOLDOWN',callback)},
+        OnBagUpdateCooldown(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'BAG_UPDATE_COOLDOWN',callback)},
 
         /**
          *
@@ -1977,7 +2021,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnInventorySearchUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'INVENTORY_SEARCH_UPDATE',callback)},
+        OnInventorySearchUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'INVENTORY_SEARCH_UPDATE',callback)},
 
         /**
          * Usually fires in pairs when an item is swapping with another.
@@ -2036,7 +2080,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPlayerMoney(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PLAYER_MONEY',callback)},
+        OnPlayerMoney(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PLAYER_MONEY',callback)},
     },
     Cursor: {
         /**
@@ -2045,7 +2089,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnCursorUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'CURSOR_UPDATE',callback)},
+        OnCursorUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'CURSOR_UPDATE',callback)},
     },
     DeathInfo: {
         /**
@@ -2054,7 +2098,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnAreaSpiritHealerInRange(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'AREA_SPIRIT_HEALER_IN_RANGE',callback)},
+        OnAreaSpiritHealerInRange(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'AREA_SPIRIT_HEALER_IN_RANGE',callback)},
 
         /**
          *
@@ -2062,7 +2106,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnAreaSpiritHealerOutOfRange(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'AREA_SPIRIT_HEALER_OUT_OF_RANGE',callback)},
+        OnAreaSpiritHealerOutOfRange(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'AREA_SPIRIT_HEALER_OUT_OF_RANGE',callback)},
 
         /**
          * ''History: Way back before WoW was released, you lost experience rather than durability when you resurrected at a spirit healer.''
@@ -2075,7 +2119,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnConfirmXpLoss(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'CONFIRM_XP_LOSS',callback)},
+        OnConfirmXpLoss(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'CONFIRM_XP_LOSS',callback)},
 
         /**
          *
@@ -2083,7 +2127,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnCorpseInInstance(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'CORPSE_IN_INSTANCE',callback)},
+        OnCorpseInInstance(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'CORPSE_IN_INSTANCE',callback)},
 
         /**
          *
@@ -2091,7 +2135,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnCorpseInRange(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'CORPSE_IN_RANGE',callback)},
+        OnCorpseInRange(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'CORPSE_IN_RANGE',callback)},
 
         /**
          *
@@ -2099,7 +2143,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnCorpseOutOfRange(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'CORPSE_OUT_OF_RANGE',callback)},
+        OnCorpseOutOfRange(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'CORPSE_OUT_OF_RANGE',callback)},
 
         /**
          * Does '''not''' fire when the player is alive after being a ghost. {{api|t=e|PLAYER_UNGHOST}} is triggered in that case.
@@ -2108,7 +2152,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPlayerAlive(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PLAYER_ALIVE',callback)},
+        OnPlayerAlive(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PLAYER_ALIVE',callback)},
 
         /**
          *
@@ -2116,7 +2160,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPlayerDead(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PLAYER_DEAD',callback)},
+        OnPlayerDead(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PLAYER_DEAD',callback)},
 
         /**
          *
@@ -2139,7 +2183,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPlayerUnghost(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PLAYER_UNGHOST',callback)},
+        OnPlayerUnghost(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PLAYER_UNGHOST',callback)},
 
         /**
          *
@@ -2163,7 +2207,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnSelfResSpellChanged(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'SELF_RES_SPELL_CHANGED',callback)},
+        OnSelfResSpellChanged(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'SELF_RES_SPELL_CHANGED',callback)},
     },
     DuelInfo: {
         /**
@@ -2172,7 +2216,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnDuelFinished(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'DUEL_FINISHED',callback)},
+        OnDuelFinished(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'DUEL_FINISHED',callback)},
 
         /**
          *
@@ -2180,7 +2224,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnDuelInbounds(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'DUEL_INBOUNDS',callback)},
+        OnDuelInbounds(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'DUEL_INBOUNDS',callback)},
 
         /**
          *
@@ -2188,7 +2232,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnDuelOutofbounds(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'DUEL_OUTOFBOUNDS',callback)},
+        OnDuelOutofbounds(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'DUEL_OUTOFBOUNDS',callback)},
 
         /**
          *
@@ -2205,7 +2249,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnDisableLowLevelRaid(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'DISABLE_LOW_LEVEL_RAID',callback)},
+        OnDisableLowLevelRaid(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'DISABLE_LOW_LEVEL_RAID',callback)},
 
         /**
          *
@@ -2213,7 +2257,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnEnableLowLevelRaid(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'ENABLE_LOW_LEVEL_RAID',callback)},
+        OnEnableLowLevelRaid(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'ENABLE_LOW_LEVEL_RAID',callback)},
 
         /**
          *
@@ -2221,7 +2265,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnInstanceLockStart(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'INSTANCE_LOCK_START',callback)},
+        OnInstanceLockStart(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'INSTANCE_LOCK_START',callback)},
 
         /**
          *
@@ -2229,7 +2273,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnInstanceLockStop(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'INSTANCE_LOCK_STOP',callback)},
+        OnInstanceLockStop(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'INSTANCE_LOCK_STOP',callback)},
 
         /**
          *
@@ -2237,7 +2281,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnInstanceLockWarning(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'INSTANCE_LOCK_WARNING',callback)},
+        OnInstanceLockWarning(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'INSTANCE_LOCK_WARNING',callback)},
 
         /**
          * Does not get triggered if a mob wearing a raid target icon dies (the icon is removed from that mob, however.)
@@ -2246,7 +2290,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnRaidTargetUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'RAID_TARGET_UPDATE',callback)},
+        OnRaidTargetUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'RAID_TARGET_UPDATE',callback)},
 
         /**
          *
@@ -2254,7 +2298,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnUpdateInstanceInfo(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'UPDATE_INSTANCE_INFO',callback)},
+        OnUpdateInstanceInfo(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'UPDATE_INSTANCE_INFO',callback)},
     },
     EncounterJournal: {
         /**
@@ -2272,7 +2316,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnEquipmentSetsChanged(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'EQUIPMENT_SETS_CHANGED',callback)},
+        OnEquipmentSetsChanged(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'EQUIPMENT_SETS_CHANGED',callback)},
 
         /**
          *
@@ -2289,7 +2333,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnEquipmentSwapPending(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'EQUIPMENT_SWAP_PENDING',callback)},
+        OnEquipmentSwapPending(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'EQUIPMENT_SWAP_PENDING',callback)},
 
         /**
          *
@@ -2314,7 +2358,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnBnBlockListUpdated(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'BN_BLOCK_LIST_UPDATED',callback)},
+        OnBnBlockListUpdated(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'BN_BLOCK_LIST_UPDATED',callback)},
 
         /**
          *
@@ -2346,7 +2390,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnBnCustomMessageLoaded(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'BN_CUSTOM_MESSAGE_LOADED',callback)},
+        OnBnCustomMessageLoaded(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'BN_CUSTOM_MESSAGE_LOADED',callback)},
 
         /**
          *
@@ -2405,7 +2449,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnBnFriendInviteRemoved(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'BN_FRIEND_INVITE_REMOVED',callback)},
+        OnBnFriendInviteRemoved(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'BN_FRIEND_INVITE_REMOVED',callback)},
 
         /**
          *
@@ -2421,7 +2465,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnBnRequestFofSucceeded(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'BN_REQUEST_FOF_SUCCEEDED',callback)},
+        OnBnRequestFofSucceeded(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'BN_REQUEST_FOF_SUCCEEDED',callback)},
 
         /**
          * You log in 
@@ -2444,7 +2488,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnFriendlistUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'FRIENDLIST_UPDATE',callback)},
+        OnFriendlistUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'FRIENDLIST_UPDATE',callback)},
 
         /**
          *
@@ -2452,7 +2496,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnIgnorelistUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'IGNORELIST_UPDATE',callback)},
+        OnIgnorelistUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'IGNORELIST_UPDATE',callback)},
 
         /**
          *
@@ -2460,7 +2504,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnMutelistUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'MUTELIST_UPDATE',callback)},
+        OnMutelistUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'MUTELIST_UPDATE',callback)},
 
         /**
          * Use {{api|C_FriendList.SetWhoToUi}} to manipulate this functionality. This event is only triggered if the Who panel was open at the time the Who data was received (this includes the case where the Blizzard UI opens it automatically because the return data was too big to display in the chat frame).
@@ -2469,7 +2513,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnWhoListUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'WHO_LIST_UPDATE',callback)},
+        OnWhoListUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'WHO_LIST_UPDATE',callback)},
     },
     GMTicketInfo: {
         /**
@@ -2487,7 +2531,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnItemRestorationButtonStatus(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'ITEM_RESTORATION_BUTTON_STATUS',callback)},
+        OnItemRestorationButtonStatus(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'ITEM_RESTORATION_BUTTON_STATUS',callback)},
 
         /**
          *
@@ -2495,7 +2539,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPetitionClosed(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PETITION_CLOSED',callback)},
+        OnPetitionClosed(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PETITION_CLOSED',callback)},
 
         /**
          *
@@ -2503,7 +2547,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPetitionShow(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PETITION_SHOW',callback)},
+        OnPetitionShow(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PETITION_SHOW',callback)},
 
         /**
          *
@@ -2519,7 +2563,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnQuickTicketSystemStatus(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'QUICK_TICKET_SYSTEM_STATUS',callback)},
+        OnQuickTicketSystemStatus(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'QUICK_TICKET_SYSTEM_STATUS',callback)},
 
         /**
          *
@@ -2527,7 +2571,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnQuickTicketThrottleChanged(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'QUICK_TICKET_THROTTLE_CHANGED',callback)},
+        OnQuickTicketThrottleChanged(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'QUICK_TICKET_THROTTLE_CHANGED',callback)},
     },
     GossipInfo: {
         /**
@@ -2536,7 +2580,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnGossipClosed(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'GOSSIP_CLOSED',callback)},
+        OnGossipClosed(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'GOSSIP_CLOSED',callback)},
 
         /**
          *
@@ -2554,7 +2598,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnGossipConfirmCancel(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'GOSSIP_CONFIRM_CANCEL',callback)},
+        OnGossipConfirmCancel(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'GOSSIP_CONFIRM_CANCEL',callback)},
 
         /**
          *
@@ -2571,7 +2615,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnGossipShow(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'GOSSIP_SHOW',callback)},
+        OnGossipShow(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'GOSSIP_SHOW',callback)},
     },
     GuildBank: {
         /**
@@ -2580,7 +2624,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnGuildbankItemLockChanged(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'GUILDBANK_ITEM_LOCK_CHANGED',callback)},
+        OnGuildbankItemLockChanged(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'GUILDBANK_ITEM_LOCK_CHANGED',callback)},
 
         /**
          *
@@ -2596,7 +2640,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnGuildbankUpdateMoney(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'GUILDBANK_UPDATE_MONEY',callback)},
+        OnGuildbankUpdateMoney(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'GUILDBANK_UPDATE_MONEY',callback)},
 
         /**
          *
@@ -2604,7 +2648,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnGuildbankUpdateTabs(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'GUILDBANK_UPDATE_TABS',callback)},
+        OnGuildbankUpdateTabs(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'GUILDBANK_UPDATE_TABS',callback)},
 
         /**
          *
@@ -2620,7 +2664,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnGuildbankUpdateWithdrawmoney(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'GUILDBANK_UPDATE_WITHDRAWMONEY',callback)},
+        OnGuildbankUpdateWithdrawmoney(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'GUILDBANK_UPDATE_WITHDRAWMONEY',callback)},
 
         /**
          *
@@ -2628,7 +2672,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnGuildbankbagslotsChanged(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'GUILDBANKBAGSLOTS_CHANGED',callback)},
+        OnGuildbankbagslotsChanged(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'GUILDBANKBAGSLOTS_CHANGED',callback)},
 
         /**
          *
@@ -2636,7 +2680,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnGuildbankframeClosed(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'GUILDBANKFRAME_CLOSED',callback)},
+        OnGuildbankframeClosed(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'GUILDBANKFRAME_CLOSED',callback)},
 
         /**
          *
@@ -2644,7 +2688,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnGuildbankframeOpened(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'GUILDBANKFRAME_OPENED',callback)},
+        OnGuildbankframeOpened(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'GUILDBANKFRAME_OPENED',callback)},
 
         /**
          *
@@ -2652,7 +2696,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnGuildbanklogUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'GUILDBANKLOG_UPDATE',callback)},
+        OnGuildbanklogUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'GUILDBANKLOG_UPDATE',callback)},
     },
     GuildInfo: {
         /**
@@ -2661,7 +2705,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnCloseTabardFrame(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'CLOSE_TABARD_FRAME',callback)},
+        OnCloseTabardFrame(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'CLOSE_TABARD_FRAME',callback)},
 
         /**
          *
@@ -2669,7 +2713,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnDisableDeclineGuildInvite(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'DISABLE_DECLINE_GUILD_INVITE',callback)},
+        OnDisableDeclineGuildInvite(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'DISABLE_DECLINE_GUILD_INVITE',callback)},
 
         /**
          *
@@ -2677,7 +2721,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnEnableDeclineGuildInvite(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'ENABLE_DECLINE_GUILD_INVITE',callback)},
+        OnEnableDeclineGuildInvite(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'ENABLE_DECLINE_GUILD_INVITE',callback)},
 
         /**
          *
@@ -2696,7 +2740,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnGuildChallengeUpdated(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'GUILD_CHALLENGE_UPDATED',callback)},
+        OnGuildChallengeUpdated(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'GUILD_CHALLENGE_UPDATED',callback)},
 
         /**
          *
@@ -2704,7 +2748,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnGuildEventLogUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'GUILD_EVENT_LOG_UPDATE',callback)},
+        OnGuildEventLogUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'GUILD_EVENT_LOG_UPDATE',callback)},
 
         /**
          *
@@ -2712,7 +2756,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnGuildInviteCancel(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'GUILD_INVITE_CANCEL',callback)},
+        OnGuildInviteCancel(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'GUILD_INVITE_CANCEL',callback)},
 
         /**
          *
@@ -2741,7 +2785,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnGuildNewsUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'GUILD_NEWS_UPDATE',callback)},
+        OnGuildNewsUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'GUILD_NEWS_UPDATE',callback)},
 
         /**
          *
@@ -2757,7 +2801,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnGuildRanksUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'GUILD_RANKS_UPDATE',callback)},
+        OnGuildRanksUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'GUILD_RANKS_UPDATE',callback)},
 
         /**
          *
@@ -2765,7 +2809,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnGuildRecipeKnownByMembers(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'GUILD_RECIPE_KNOWN_BY_MEMBERS',callback)},
+        OnGuildRecipeKnownByMembers(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'GUILD_RECIPE_KNOWN_BY_MEMBERS',callback)},
 
         /**
          *
@@ -2773,7 +2817,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnGuildRegistrarClosed(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'GUILD_REGISTRAR_CLOSED',callback)},
+        OnGuildRegistrarClosed(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'GUILD_REGISTRAR_CLOSED',callback)},
 
         /**
          *
@@ -2781,7 +2825,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnGuildRegistrarShow(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'GUILD_REGISTRAR_SHOW',callback)},
+        OnGuildRegistrarShow(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'GUILD_REGISTRAR_SHOW',callback)},
 
         /**
          *
@@ -2797,7 +2841,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnGuildRewardsList(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'GUILD_REWARDS_LIST',callback)},
+        OnGuildRewardsList(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'GUILD_REWARDS_LIST',callback)},
 
         /**
          *
@@ -2813,7 +2857,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnGuildTradeskillUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'GUILD_TRADESKILL_UPDATE',callback)},
+        OnGuildTradeskillUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'GUILD_TRADESKILL_UPDATE',callback)},
 
         /**
          *
@@ -2821,7 +2865,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnGuildtabardUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'GUILDTABARD_UPDATE',callback)},
+        OnGuildtabardUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'GUILDTABARD_UPDATE',callback)},
 
         /**
          *
@@ -2829,7 +2873,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnOpenTabardFrame(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'OPEN_TABARD_FRAME',callback)},
+        OnOpenTabardFrame(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'OPEN_TABARD_FRAME',callback)},
 
         /**
          *
@@ -2853,7 +2897,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnTabardCansaveChanged(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'TABARD_CANSAVE_CHANGED',callback)},
+        OnTabardCansaveChanged(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'TABARD_CANSAVE_CHANGED',callback)},
 
         /**
          *
@@ -2861,7 +2905,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnTabardSavePending(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'TABARD_SAVE_PENDING',callback)},
+        OnTabardSavePending(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'TABARD_SAVE_PENDING',callback)},
     },
     InstanceEncounter: {
         /**
@@ -2870,7 +2914,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnInstanceEncounterEngageUnit(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'INSTANCE_ENCOUNTER_ENGAGE_UNIT',callback)},
+        OnInstanceEncounterEngageUnit(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'INSTANCE_ENCOUNTER_ENGAGE_UNIT',callback)},
     },
     Item: {
         /**
@@ -2879,7 +2923,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnBindEnchant(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'BIND_ENCHANT',callback)},
+        OnBindEnchant(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'BIND_ENCHANT',callback)},
 
         /**
          *
@@ -2887,7 +2931,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnConfirmBeforeUse(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'CONFIRM_BEFORE_USE',callback)},
+        OnConfirmBeforeUse(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'CONFIRM_BEFORE_USE',callback)},
 
         /**
          *
@@ -2941,7 +2985,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnUseBindConfirm(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'USE_BIND_CONFIRM',callback)},
+        OnUseBindConfirm(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'USE_BIND_CONFIRM',callback)},
     },
     ItemSocketInfo: {
         /**
@@ -2950,7 +2994,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnSocketInfoAccept(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'SOCKET_INFO_ACCEPT',callback)},
+        OnSocketInfoAccept(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'SOCKET_INFO_ACCEPT',callback)},
 
         /**
          *
@@ -2958,7 +3002,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnSocketInfoClose(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'SOCKET_INFO_CLOSE',callback)},
+        OnSocketInfoClose(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'SOCKET_INFO_CLOSE',callback)},
 
         /**
          *
@@ -2966,7 +3010,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnSocketInfoSuccess(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'SOCKET_INFO_SUCCESS',callback)},
+        OnSocketInfoSuccess(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'SOCKET_INFO_SUCCESS',callback)},
 
         /**
          *
@@ -2974,7 +3018,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnSocketInfoUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'SOCKET_INFO_UPDATE',callback)},
+        OnSocketInfoUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'SOCKET_INFO_UPDATE',callback)},
     },
     ItemText: {
         /**
@@ -2983,7 +3027,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnItemTextBegin(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'ITEM_TEXT_BEGIN',callback)},
+        OnItemTextBegin(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'ITEM_TEXT_BEGIN',callback)},
 
         /**
          *
@@ -2991,7 +3035,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnItemTextClosed(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'ITEM_TEXT_CLOSED',callback)},
+        OnItemTextClosed(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'ITEM_TEXT_CLOSED',callback)},
 
         /**
          *
@@ -2999,7 +3043,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnItemTextReady(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'ITEM_TEXT_READY',callback)},
+        OnItemTextReady(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'ITEM_TEXT_READY',callback)},
 
         /**
          *
@@ -3025,7 +3069,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnUpdateBindings(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'UPDATE_BINDINGS',callback)},
+        OnUpdateBindings(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'UPDATE_BINDINGS',callback)},
     },
     KnowledgeBase: {
         /**
@@ -3034,7 +3078,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnKnowledgeBaseArticleLoadFailure(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'KNOWLEDGE_BASE_ARTICLE_LOAD_FAILURE',callback)},
+        OnKnowledgeBaseArticleLoadFailure(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'KNOWLEDGE_BASE_ARTICLE_LOAD_FAILURE',callback)},
 
         /**
          *
@@ -3042,7 +3086,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnKnowledgeBaseArticleLoadSuccess(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'KNOWLEDGE_BASE_ARTICLE_LOAD_SUCCESS',callback)},
+        OnKnowledgeBaseArticleLoadSuccess(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'KNOWLEDGE_BASE_ARTICLE_LOAD_SUCCESS',callback)},
 
         /**
          *
@@ -3050,7 +3094,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnKnowledgeBaseQueryLoadFailure(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'KNOWLEDGE_BASE_QUERY_LOAD_FAILURE',callback)},
+        OnKnowledgeBaseQueryLoadFailure(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'KNOWLEDGE_BASE_QUERY_LOAD_FAILURE',callback)},
 
         /**
          *
@@ -3058,7 +3102,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnKnowledgeBaseQueryLoadSuccess(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'KNOWLEDGE_BASE_QUERY_LOAD_SUCCESS',callback)},
+        OnKnowledgeBaseQueryLoadSuccess(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'KNOWLEDGE_BASE_QUERY_LOAD_SUCCESS',callback)},
 
         /**
          *
@@ -3066,7 +3110,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnKnowledgeBaseServerMessage(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'KNOWLEDGE_BASE_SERVER_MESSAGE',callback)},
+        OnKnowledgeBaseServerMessage(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'KNOWLEDGE_BASE_SERVER_MESSAGE',callback)},
 
         /**
          *
@@ -3074,7 +3118,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnKnowledgeBaseSetupLoadFailure(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'KNOWLEDGE_BASE_SETUP_LOAD_FAILURE',callback)},
+        OnKnowledgeBaseSetupLoadFailure(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'KNOWLEDGE_BASE_SETUP_LOAD_FAILURE',callback)},
 
         /**
          *
@@ -3082,7 +3126,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnKnowledgeBaseSetupLoadSuccess(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'KNOWLEDGE_BASE_SETUP_LOAD_SUCCESS',callback)},
+        OnKnowledgeBaseSetupLoadSuccess(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'KNOWLEDGE_BASE_SETUP_LOAD_SUCCESS',callback)},
 
         /**
          *
@@ -3090,7 +3134,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnKnowledgeBaseSystemMotdUpdated(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'KNOWLEDGE_BASE_SYSTEM_MOTD_UPDATED',callback)},
+        OnKnowledgeBaseSystemMotdUpdated(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'KNOWLEDGE_BASE_SYSTEM_MOTD_UPDATED',callback)},
     },
     LFGInfo: {
         /**
@@ -3099,7 +3143,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnLfgBootProposalUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'LFG_BOOT_PROPOSAL_UPDATE',callback)},
+        OnLfgBootProposalUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'LFG_BOOT_PROPOSAL_UPDATE',callback)},
 
         /**
          *
@@ -3107,7 +3151,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnLfgCompletionReward(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'LFG_COMPLETION_REWARD',callback)},
+        OnLfgCompletionReward(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'LFG_COMPLETION_REWARD',callback)},
 
         /**
          *
@@ -3125,7 +3169,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnLfgLockInfoReceived(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'LFG_LOCK_INFO_RECEIVED',callback)},
+        OnLfgLockInfoReceived(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'LFG_LOCK_INFO_RECEIVED',callback)},
 
         /**
          *
@@ -3151,7 +3195,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnLfgProposalFailed(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'LFG_PROPOSAL_FAILED',callback)},
+        OnLfgProposalFailed(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'LFG_PROPOSAL_FAILED',callback)},
 
         /**
          *
@@ -3159,7 +3203,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnLfgProposalShow(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'LFG_PROPOSAL_SHOW',callback)},
+        OnLfgProposalShow(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'LFG_PROPOSAL_SHOW',callback)},
 
         /**
          *
@@ -3167,7 +3211,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnLfgProposalSucceeded(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'LFG_PROPOSAL_SUCCEEDED',callback)},
+        OnLfgProposalSucceeded(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'LFG_PROPOSAL_SUCCEEDED',callback)},
 
         /**
          *
@@ -3175,7 +3219,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnLfgProposalUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'LFG_PROPOSAL_UPDATE',callback)},
+        OnLfgProposalUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'LFG_PROPOSAL_UPDATE',callback)},
 
         /**
          *
@@ -3183,7 +3227,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnLfgQueueStatusUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'LFG_QUEUE_STATUS_UPDATE',callback)},
+        OnLfgQueueStatusUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'LFG_QUEUE_STATUS_UPDATE',callback)},
 
         /**
          *
@@ -3191,7 +3235,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnLfgRoleCheckHide(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'LFG_ROLE_CHECK_HIDE',callback)},
+        OnLfgRoleCheckHide(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'LFG_ROLE_CHECK_HIDE',callback)},
 
         /**
          *
@@ -3218,7 +3262,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnLfgRoleCheckUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'LFG_ROLE_CHECK_UPDATE',callback)},
+        OnLfgRoleCheckUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'LFG_ROLE_CHECK_UPDATE',callback)},
 
         /**
          *
@@ -3226,7 +3270,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnLfgRoleUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'LFG_ROLE_UPDATE',callback)},
+        OnLfgRoleUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'LFG_ROLE_UPDATE',callback)},
 
         /**
          *
@@ -3234,7 +3278,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnLfgUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'LFG_UPDATE',callback)},
+        OnLfgUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'LFG_UPDATE',callback)},
 
         /**
          *
@@ -3242,7 +3286,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnLfgUpdateRandomInfo(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'LFG_UPDATE_RANDOM_INFO',callback)},
+        OnLfgUpdateRandomInfo(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'LFG_UPDATE_RANDOM_INFO',callback)},
 
         /**
          *
@@ -3250,7 +3294,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnUpdateLfgList(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'UPDATE_LFG_LIST',callback)},
+        OnUpdateLfgList(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'UPDATE_LFG_LIST',callback)},
     },
     LFGuildInfo: {
         /**
@@ -3259,7 +3303,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnLfGuildBrowseUpdated(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'LF_GUILD_BROWSE_UPDATED',callback)},
+        OnLfGuildBrowseUpdated(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'LF_GUILD_BROWSE_UPDATED',callback)},
 
         /**
          *
@@ -3267,7 +3311,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnLfGuildMembershipListChanged(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'LF_GUILD_MEMBERSHIP_LIST_CHANGED',callback)},
+        OnLfGuildMembershipListChanged(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'LF_GUILD_MEMBERSHIP_LIST_CHANGED',callback)},
 
         /**
          *
@@ -3283,7 +3327,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnLfGuildPostUpdated(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'LF_GUILD_POST_UPDATED',callback)},
+        OnLfGuildPostUpdated(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'LF_GUILD_POST_UPDATED',callback)},
 
         /**
          *
@@ -3291,7 +3335,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnLfGuildRecruitListChanged(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'LF_GUILD_RECRUIT_LIST_CHANGED',callback)},
+        OnLfGuildRecruitListChanged(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'LF_GUILD_RECRUIT_LIST_CHANGED',callback)},
 
         /**
          *
@@ -3299,7 +3343,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnLfGuildRecruitsUpdated(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'LF_GUILD_RECRUITS_UPDATED',callback)},
+        OnLfGuildRecruitsUpdated(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'LF_GUILD_RECRUITS_UPDATED',callback)},
     },
     Loot: {
         /**
@@ -3352,7 +3396,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnLootClosed(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'LOOT_CLOSED',callback)},
+        OnLootClosed(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'LOOT_CLOSED',callback)},
 
         /**
          *
@@ -3385,7 +3429,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnOpenMasterLootList(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'OPEN_MASTER_LOOT_LIST',callback)},
+        OnOpenMasterLootList(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'OPEN_MASTER_LOOT_LIST',callback)},
 
         /**
          *
@@ -3403,7 +3447,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnTrialCapReachedMoney(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'TRIAL_CAP_REACHED_MONEY',callback)},
+        OnTrialCapReachedMoney(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'TRIAL_CAP_REACHED_MONEY',callback)},
 
         /**
          *
@@ -3411,7 +3455,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnUpdateMasterLootList(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'UPDATE_MASTER_LOOT_LIST',callback)},
+        OnUpdateMasterLootList(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'UPDATE_MASTER_LOOT_LIST',callback)},
     },
     LossOfControl: {
         /**
@@ -3420,7 +3464,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPlayerControlGained(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PLAYER_CONTROL_GAINED',callback)},
+        OnPlayerControlGained(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PLAYER_CONTROL_GAINED',callback)},
 
         /**
          *
@@ -3428,7 +3472,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPlayerControlLost(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PLAYER_CONTROL_LOST',callback)},
+        OnPlayerControlLost(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PLAYER_CONTROL_LOST',callback)},
     },
     Macro: {
         /**
@@ -3445,7 +3489,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnUpdateMacros(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'UPDATE_MACROS',callback)},
+        OnUpdateMacros(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'UPDATE_MACROS',callback)},
     },
     Mail: {
         /**
@@ -3462,7 +3506,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnMailClosed(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'MAIL_CLOSED',callback)},
+        OnMailClosed(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'MAIL_CLOSED',callback)},
 
         /**
          *
@@ -3483,7 +3527,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnMailInboxUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'MAIL_INBOX_UPDATE',callback)},
+        OnMailInboxUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'MAIL_INBOX_UPDATE',callback)},
 
         /**
          *
@@ -3500,7 +3544,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnMailSendInfoUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'MAIL_SEND_INFO_UPDATE',callback)},
+        OnMailSendInfoUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'MAIL_SEND_INFO_UPDATE',callback)},
 
         /**
          *
@@ -3508,7 +3552,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnMailSendSuccess(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'MAIL_SEND_SUCCESS',callback)},
+        OnMailSendSuccess(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'MAIL_SEND_SUCCESS',callback)},
 
         /**
          *
@@ -3516,7 +3560,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnMailShow(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'MAIL_SHOW',callback)},
+        OnMailShow(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'MAIL_SHOW',callback)},
 
         /**
          *
@@ -3532,7 +3576,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnMailUnlockSendItems(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'MAIL_UNLOCK_SEND_ITEMS',callback)},
+        OnMailUnlockSendItems(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'MAIL_UNLOCK_SEND_ITEMS',callback)},
 
         /**
          *
@@ -3540,7 +3584,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnSendMailCodChanged(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'SEND_MAIL_COD_CHANGED',callback)},
+        OnSendMailCodChanged(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'SEND_MAIL_COD_CHANGED',callback)},
 
         /**
          *
@@ -3548,7 +3592,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnSendMailMoneyChanged(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'SEND_MAIL_MONEY_CHANGED',callback)},
+        OnSendMailMoneyChanged(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'SEND_MAIL_MONEY_CHANGED',callback)},
 
         /**
          * Fired when the player enters the world and enters/leaves an instance, if there is mail in the player's mailbox.
@@ -3563,7 +3607,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnUpdatePendingMail(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'UPDATE_PENDING_MAIL',callback)},
+        OnUpdatePendingMail(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'UPDATE_PENDING_MAIL',callback)},
     },
     Map: {
         /**
@@ -3572,7 +3616,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnZoneChanged(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'ZONE_CHANGED',callback)},
+        OnZoneChanged(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'ZONE_CHANGED',callback)},
 
         /**
          *
@@ -3580,7 +3624,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnZoneChangedIndoors(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'ZONE_CHANGED_INDOORS',callback)},
+        OnZoneChangedIndoors(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'ZONE_CHANGED_INDOORS',callback)},
 
         /**
          * When this event fires, the UI may still think you're in the zone you just left. Don't depend on {{api|GetRealZoneText}} and similar functions to report the new zone in reaction to ZONE_CHANGED_NEW_AREA. (untested for similar events)
@@ -3589,7 +3633,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnZoneChangedNewArea(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'ZONE_CHANGED_NEW_AREA',callback)},
+        OnZoneChangedNewArea(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'ZONE_CHANGED_NEW_AREA',callback)},
     },
     MerchantFrame: {
         /**
@@ -3598,7 +3642,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnMerchantClosed(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'MERCHANT_CLOSED',callback)},
+        OnMerchantClosed(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'MERCHANT_CLOSED',callback)},
 
         /**
          *
@@ -3606,7 +3650,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnMerchantShow(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'MERCHANT_SHOW',callback)},
+        OnMerchantShow(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'MERCHANT_SHOW',callback)},
 
         /**
          *
@@ -3614,7 +3658,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnMerchantUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'MERCHANT_UPDATE',callback)},
+        OnMerchantUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'MERCHANT_UPDATE',callback)},
     },
     Minimap: {
         /**
@@ -3633,7 +3677,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnMinimapUpdateTracking(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'MINIMAP_UPDATE_TRACKING',callback)},
+        OnMinimapUpdateTracking(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'MINIMAP_UPDATE_TRACKING',callback)},
 
         /**
          * This event does not relate to the '''+''' and '''-''' minimap zoom buttons.
@@ -3642,7 +3686,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnMinimapUpdateZoom(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'MINIMAP_UPDATE_ZOOM',callback)},
+        OnMinimapUpdateZoom(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'MINIMAP_UPDATE_ZOOM',callback)},
     },
     PaperDollInfo: {
         /**
@@ -3659,7 +3703,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnCombatRatingUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'COMBAT_RATING_UPDATE',callback)},
+        OnCombatRatingUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'COMBAT_RATING_UPDATE',callback)},
 
         /**
          *
@@ -3667,7 +3711,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnDisableXpGain(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'DISABLE_XP_GAIN',callback)},
+        OnDisableXpGain(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'DISABLE_XP_GAIN',callback)},
 
         /**
          *
@@ -3675,7 +3719,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnEnableXpGain(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'ENABLE_XP_GAIN',callback)},
+        OnEnableXpGain(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'ENABLE_XP_GAIN',callback)},
 
         /**
          *
@@ -3691,7 +3735,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnInspectHonorUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'INSPECT_HONOR_UPDATE',callback)},
+        OnInspectHonorUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'INSPECT_HONOR_UPDATE',callback)},
 
         /**
          *
@@ -3707,7 +3751,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnMasteryUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'MASTERY_UPDATE',callback)},
+        OnMasteryUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'MASTERY_UPDATE',callback)},
 
         /**
          *
@@ -3715,7 +3759,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPetSpellPowerUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PET_SPELL_POWER_UPDATE',callback)},
+        OnPetSpellPowerUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PET_SPELL_POWER_UPDATE',callback)},
 
         /**
          *
@@ -3732,7 +3776,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnUpdateFaction(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'UPDATE_FACTION',callback)},
+        OnUpdateFaction(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'UPDATE_FACTION',callback)},
 
         /**
          *
@@ -3740,7 +3784,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnUpdateInventoryAlerts(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'UPDATE_INVENTORY_ALERTS',callback)},
+        OnUpdateInventoryAlerts(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'UPDATE_INVENTORY_ALERTS',callback)},
 
         /**
          *
@@ -3748,7 +3792,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnUpdateInventoryDurability(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'UPDATE_INVENTORY_DURABILITY',callback)},
+        OnUpdateInventoryDurability(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'UPDATE_INVENTORY_DURABILITY',callback)},
     },
     PartyInfo: {
         /**
@@ -3757,7 +3801,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnEnteredDifferentInstanceFromParty(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'ENTERED_DIFFERENT_INSTANCE_FROM_PARTY',callback)},
+        OnEnteredDifferentInstanceFromParty(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'ENTERED_DIFFERENT_INSTANCE_FROM_PARTY',callback)},
 
         /**
          *
@@ -3765,7 +3809,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnInstanceBootStart(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'INSTANCE_BOOT_START',callback)},
+        OnInstanceBootStart(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'INSTANCE_BOOT_START',callback)},
 
         /**
          *
@@ -3773,7 +3817,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnInstanceBootStop(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'INSTANCE_BOOT_STOP',callback)},
+        OnInstanceBootStop(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'INSTANCE_BOOT_STOP',callback)},
 
         /**
          *
@@ -3781,7 +3825,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPartyInviteCancel(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PARTY_INVITE_CANCEL',callback)},
+        OnPartyInviteCancel(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PARTY_INVITE_CANCEL',callback)},
 
         /**
          *
@@ -3804,7 +3848,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPartyLeaderChanged(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PARTY_LEADER_CHANGED',callback)},
+        OnPartyLeaderChanged(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PARTY_LEADER_CHANGED',callback)},
 
         /**
          *
@@ -3812,7 +3856,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPartyLfgRestricted(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PARTY_LFG_RESTRICTED',callback)},
+        OnPartyLfgRestricted(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PARTY_LFG_RESTRICTED',callback)},
 
         /**
          *
@@ -3820,7 +3864,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPartyLootMethodChanged(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PARTY_LOOT_METHOD_CHANGED',callback)},
+        OnPartyLootMethodChanged(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PARTY_LOOT_METHOD_CHANGED',callback)},
 
         /**
          *
@@ -3844,7 +3888,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPlayerDifficultyChanged(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PLAYER_DIFFICULTY_CHANGED',callback)},
+        OnPlayerDifficultyChanged(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PLAYER_DIFFICULTY_CHANGED',callback)},
 
         /**
          *
@@ -3852,7 +3896,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPlayerRolesAssigned(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PLAYER_ROLES_ASSIGNED',callback)},
+        OnPlayerRolesAssigned(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PLAYER_ROLES_ASSIGNED',callback)},
 
         /**
          *
@@ -3860,7 +3904,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnRaidRosterUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'RAID_ROSTER_UPDATE',callback)},
+        OnRaidRosterUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'RAID_ROSTER_UPDATE',callback)},
 
         /**
          *
@@ -3923,7 +3967,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPetAttackStart(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PET_ATTACK_START',callback)},
+        OnPetAttackStart(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PET_ATTACK_START',callback)},
 
         /**
          *
@@ -3931,7 +3975,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPetAttackStop(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PET_ATTACK_STOP',callback)},
+        OnPetAttackStop(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PET_ATTACK_STOP',callback)},
 
         /**
          *
@@ -3939,7 +3983,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPetBarHidegrid(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PET_BAR_HIDEGRID',callback)},
+        OnPetBarHidegrid(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PET_BAR_HIDEGRID',callback)},
 
         /**
          *
@@ -3947,7 +3991,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPetBarShowgrid(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PET_BAR_SHOWGRID',callback)},
+        OnPetBarShowgrid(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PET_BAR_SHOWGRID',callback)},
 
         /**
          *
@@ -3955,7 +3999,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPetBarUpdateCooldown(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PET_BAR_UPDATE_COOLDOWN',callback)},
+        OnPetBarUpdateCooldown(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PET_BAR_UPDATE_COOLDOWN',callback)},
 
         /**
          *
@@ -3984,7 +4028,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPetUiClose(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PET_UI_CLOSE',callback)},
+        OnPetUiClose(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PET_UI_CLOSE',callback)},
 
         /**
          *
@@ -3992,7 +4036,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnRaisedAsGhoul(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'RAISED_AS_GHOUL',callback)},
+        OnRaisedAsGhoul(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'RAISED_AS_GHOUL',callback)},
     },
     PetJournal: {
         /**
@@ -4001,7 +4045,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnCompanionLearned(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'COMPANION_LEARNED',callback)},
+        OnCompanionLearned(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'COMPANION_LEARNED',callback)},
 
         /**
          *
@@ -4009,7 +4053,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnCompanionUnlearned(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'COMPANION_UNLEARNED',callback)},
+        OnCompanionUnlearned(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'COMPANION_UNLEARNED',callback)},
 
         /**
          * If the type is nil, the UI should update if it's visible, regardless of which type it's managing. If the type is non-nil, then it will be either "CRITTER" or "MOUNT" and that signifies that the active companion has changed and the UI should update if it's currently showing that type.
@@ -4046,7 +4090,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnArenaSeasonWorldState(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'ARENA_SEASON_WORLD_STATE',callback)},
+        OnArenaSeasonWorldState(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'ARENA_SEASON_WORLD_STATE',callback)},
 
         /**
          *
@@ -4054,7 +4098,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnBattlefieldQueueTimeout(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'BATTLEFIELD_QUEUE_TIMEOUT',callback)},
+        OnBattlefieldQueueTimeout(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'BATTLEFIELD_QUEUE_TIMEOUT',callback)},
 
         /**
          *
@@ -4062,7 +4106,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnBattlefieldsClosed(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'BATTLEFIELDS_CLOSED',callback)},
+        OnBattlefieldsClosed(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'BATTLEFIELDS_CLOSED',callback)},
 
         /**
          *
@@ -4079,7 +4123,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPlayerEnteringBattleground(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PLAYER_ENTERING_BATTLEGROUND',callback)},
+        OnPlayerEnteringBattleground(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PLAYER_ENTERING_BATTLEGROUND',callback)},
 
         /**
          *
@@ -4087,7 +4131,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPvpRatedStatsUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PVP_RATED_STATS_UPDATE',callback)},
+        OnPvpRatedStatsUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PVP_RATED_STATS_UPDATE',callback)},
 
         /**
          *
@@ -4095,7 +4139,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPvpRewardsUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PVP_REWARDS_UPDATE',callback)},
+        OnPvpRewardsUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PVP_REWARDS_UPDATE',callback)},
 
         /**
          *
@@ -4113,7 +4157,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPvpqueueAnywhereShow(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PVPQUEUE_ANYWHERE_SHOW',callback)},
+        OnPvpqueueAnywhereShow(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PVPQUEUE_ANYWHERE_SHOW',callback)},
 
         /**
          *
@@ -4121,7 +4165,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPvpqueueAnywhereUpdateAvailable(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PVPQUEUE_ANYWHERE_UPDATE_AVAILABLE',callback)},
+        OnPvpqueueAnywhereUpdateAvailable(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PVPQUEUE_ANYWHERE_UPDATE_AVAILABLE',callback)},
 
         /**
          *
@@ -4129,7 +4173,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnUpdateBattlefieldScore(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'UPDATE_BATTLEFIELD_SCORE',callback)},
+        OnUpdateBattlefieldScore(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'UPDATE_BATTLEFIELD_SCORE',callback)},
 
         /**
          *
@@ -4157,7 +4201,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnQuestAccepted(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'QUEST_ACCEPTED',callback)},
+        OnQuestAccepted(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'QUEST_ACCEPTED',callback)},
 
         /**
          *
@@ -4173,7 +4217,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnQuestComplete(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'QUEST_COMPLETE',callback)},
+        OnQuestComplete(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'QUEST_COMPLETE',callback)},
 
         /**
          *
@@ -4196,7 +4240,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnQuestLogUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'QUEST_LOG_UPDATE',callback)},
+        OnQuestLogUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'QUEST_LOG_UPDATE',callback)},
 
         /**
          *
@@ -4204,7 +4248,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnQuestPoiUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'QUEST_POI_UPDATE',callback)},
+        OnQuestPoiUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'QUEST_POI_UPDATE',callback)},
 
         /**
          *
@@ -4212,7 +4256,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnQuestWatchUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'QUEST_WATCH_UPDATE',callback)},
+        OnQuestWatchUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'QUEST_WATCH_UPDATE',callback)},
     },
     QuestOffer: {
         /**
@@ -4230,7 +4274,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnQuestFinished(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'QUEST_FINISHED',callback)},
+        OnQuestFinished(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'QUEST_FINISHED',callback)},
 
         /**
          *
@@ -4238,7 +4282,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnQuestGreeting(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'QUEST_GREETING',callback)},
+        OnQuestGreeting(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'QUEST_GREETING',callback)},
 
         /**
          *
@@ -4246,7 +4290,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnQuestItemUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'QUEST_ITEM_UPDATE',callback)},
+        OnQuestItemUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'QUEST_ITEM_UPDATE',callback)},
 
         /**
          *
@@ -4254,7 +4298,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnQuestProgress(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'QUEST_PROGRESS',callback)},
+        OnQuestProgress(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'QUEST_PROGRESS',callback)},
     },
     ResearchInfo: {
         /**
@@ -4263,7 +4307,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnArchaeologyClosed(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'ARCHAEOLOGY_CLOSED',callback)},
+        OnArchaeologyClosed(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'ARCHAEOLOGY_CLOSED',callback)},
 
         /**
          *
@@ -4271,7 +4315,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnArchaeologyToggle(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'ARCHAEOLOGY_TOGGLE',callback)},
+        OnArchaeologyToggle(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'ARCHAEOLOGY_TOGGLE',callback)},
 
         /**
          *
@@ -4287,7 +4331,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnResearchArtifactDigSiteUpdated(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'RESEARCH_ARTIFACT_DIG_SITE_UPDATED',callback)},
+        OnResearchArtifactDigSiteUpdated(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'RESEARCH_ARTIFACT_DIG_SITE_UPDATED',callback)},
 
         /**
          *
@@ -4295,7 +4339,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnResearchArtifactHistoryReady(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'RESEARCH_ARTIFACT_HISTORY_READY',callback)},
+        OnResearchArtifactHistoryReady(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'RESEARCH_ARTIFACT_HISTORY_READY',callback)},
     },
     RestrictedActions: {
         /**
@@ -4340,7 +4384,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnSkillLinesChanged(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'SKILL_LINES_CHANGED',callback)},
+        OnSkillLinesChanged(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'SKILL_LINES_CHANGED',callback)},
     },
     Sound: {
         /**
@@ -4349,7 +4393,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnSoundDeviceUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'SOUND_DEVICE_UPDATE',callback)},
+        OnSoundDeviceUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'SOUND_DEVICE_UPDATE',callback)},
     },
     SpecializationInfo: {
         /**
@@ -4376,7 +4420,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPlayerTalentUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PLAYER_TALENT_UPDATE',callback)},
+        OnPlayerTalentUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PLAYER_TALENT_UPDATE',callback)},
 
         /**
          *
@@ -4481,7 +4525,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnSpellUpdateCooldown(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'SPELL_UPDATE_COOLDOWN',callback)},
+        OnSpellUpdateCooldown(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'SPELL_UPDATE_COOLDOWN',callback)},
 
         /**
          * The definition of useable and unusable is somewhat confusing. Firstly, range is not taken into account. Secondly if a spell requires a valid target and doesn't have one it gets marked as useable. If it requires mana or rage and there isn't enough then it gets marked as unusable. This results in the following behaviour:
@@ -4492,7 +4536,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnSpellUpdateUsable(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'SPELL_UPDATE_USABLE',callback)},
+        OnSpellUpdateUsable(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'SPELL_UPDATE_USABLE',callback)},
 
         /**
          * ''In prior game versions, this event also fired every time the player navigated the spellbook (swapped pages/tabs), since that caused UpdateSpells to be called which in turn always triggered a SPELLS_CHANGED event. However, that API has been removed since [[Patch_4.0.1/API_changes|Patch 4.0.1]].'' 
@@ -4501,7 +4545,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnSpellsChanged(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'SPELLS_CHANGED',callback)},
+        OnSpellsChanged(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'SPELLS_CHANGED',callback)},
 
         /**
          *
@@ -4509,7 +4553,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnStartAutorepeatSpell(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'START_AUTOREPEAT_SPELL',callback)},
+        OnStartAutorepeatSpell(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'START_AUTOREPEAT_SPELL',callback)},
 
         /**
          *
@@ -4517,7 +4561,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnStopAutorepeatSpell(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'STOP_AUTOREPEAT_SPELL',callback)},
+        OnStopAutorepeatSpell(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'STOP_AUTOREPEAT_SPELL',callback)},
 
         /**
          * Fired when a unit tries to cast an instant, non-instant, or channeling spell even if out of range or out of line-of-sight (unless the unit is attempting to cast a non-instant spell while already casting or attempting to cast a spell that is on cooldown).
@@ -4537,7 +4581,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnUpdateShapeshiftCooldown(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'UPDATE_SHAPESHIFT_COOLDOWN',callback)},
+        OnUpdateShapeshiftCooldown(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'UPDATE_SHAPESHIFT_COOLDOWN',callback)},
 
         /**
          *
@@ -4545,7 +4589,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnUpdateShapeshiftForm(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'UPDATE_SHAPESHIFT_FORM',callback)},
+        OnUpdateShapeshiftForm(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'UPDATE_SHAPESHIFT_FORM',callback)},
 
         /**
          *
@@ -4553,7 +4597,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnUpdateShapeshiftForms(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'UPDATE_SHAPESHIFT_FORMS',callback)},
+        OnUpdateShapeshiftForms(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'UPDATE_SHAPESHIFT_FORMS',callback)},
 
         /**
          *
@@ -4561,7 +4605,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnUpdateShapeshiftUsable(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'UPDATE_SHAPESHIFT_USABLE',callback)},
+        OnUpdateShapeshiftUsable(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'UPDATE_SHAPESHIFT_USABLE',callback)},
     },
     StableInfo: {
         /**
@@ -4570,7 +4614,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPetStableClosed(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PET_STABLE_CLOSED',callback)},
+        OnPetStableClosed(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PET_STABLE_CLOSED',callback)},
 
         /**
          *
@@ -4578,7 +4622,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPetStableShow(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PET_STABLE_SHOW',callback)},
+        OnPetStableShow(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PET_STABLE_SHOW',callback)},
 
         /**
          *
@@ -4586,7 +4630,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPetStableUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PET_STABLE_UPDATE',callback)},
+        OnPetStableUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PET_STABLE_UPDATE',callback)},
 
         /**
          *
@@ -4594,7 +4638,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPetStableUpdatePaperdoll(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PET_STABLE_UPDATE_PAPERDOLL',callback)},
+        OnPetStableUpdatePaperdoll(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PET_STABLE_UPDATE_PAPERDOLL',callback)},
     },
     System: {
         /**
@@ -4603,7 +4647,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnDisableTaxiBenchmark(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'DISABLE_TAXI_BENCHMARK',callback)},
+        OnDisableTaxiBenchmark(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'DISABLE_TAXI_BENCHMARK',callback)},
 
         /**
          *
@@ -4611,7 +4655,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnEnableTaxiBenchmark(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'ENABLE_TAXI_BENCHMARK',callback)},
+        OnEnableTaxiBenchmark(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'ENABLE_TAXI_BENCHMARK',callback)},
 
         /**
          *
@@ -4619,7 +4663,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnLogoutCancel(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'LOGOUT_CANCEL',callback)},
+        OnLogoutCancel(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'LOGOUT_CANCEL',callback)},
 
         /**
          *
@@ -4627,7 +4671,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPlayerCamping(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PLAYER_CAMPING',callback)},
+        OnPlayerCamping(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PLAYER_CAMPING',callback)},
 
         /**
          *
@@ -4635,7 +4679,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPlayerEnteringWorld(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PLAYER_ENTERING_WORLD',callback)},
+        OnPlayerEnteringWorld(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PLAYER_ENTERING_WORLD',callback)},
 
         /**
          *
@@ -4643,7 +4687,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPlayerLeavingWorld(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PLAYER_LEAVING_WORLD',callback)},
+        OnPlayerLeavingWorld(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PLAYER_LEAVING_WORLD',callback)},
 
         /**
          *
@@ -4651,7 +4695,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPlayerLogin(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PLAYER_LOGIN',callback)},
+        OnPlayerLogin(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PLAYER_LOGIN',callback)},
 
         /**
          *
@@ -4659,7 +4703,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPlayerLogout(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PLAYER_LOGOUT',callback)},
+        OnPlayerLogout(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PLAYER_LOGOUT',callback)},
 
         /**
          * The dialog which appears after this event, has choices of "Exit Now" or "Cancel".
@@ -4670,7 +4714,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPlayerQuiting(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PLAYER_QUITING',callback)},
+        OnPlayerQuiting(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PLAYER_QUITING',callback)},
 
         /**
          *
@@ -4725,7 +4769,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnVariablesLoaded(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'VARIABLES_LOADED',callback)},
+        OnVariablesLoaded(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'VARIABLES_LOADED',callback)},
 
         /**
          *
@@ -4733,7 +4777,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnWowMouseNotFound(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'WOW_MOUSE_NOT_FOUND',callback)},
+        OnWowMouseNotFound(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'WOW_MOUSE_NOT_FOUND',callback)},
     },
     TaxiMap: {
         /**
@@ -4742,7 +4786,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnTaximapClosed(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'TAXIMAP_CLOSED',callback)},
+        OnTaximapClosed(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'TAXIMAP_CLOSED',callback)},
 
         /**
          * This will fire even if you know no flight paths connected to the one you're at, so the map doesn't actually open.
@@ -4760,7 +4804,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPlayerTradeCurrency(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PLAYER_TRADE_CURRENCY',callback)},
+        OnPlayerTradeCurrency(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PLAYER_TRADE_CURRENCY',callback)},
 
         /**
          *
@@ -4768,7 +4812,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPlayerTradeMoney(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PLAYER_TRADE_MONEY',callback)},
+        OnPlayerTradeMoney(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PLAYER_TRADE_MONEY',callback)},
 
         /**
          * Target agree status only shown when he has done it first. By this, player and target agree status is only shown together (playerAccepted  == 1 and targetAccepted == 1), when player agreed after target.
@@ -4786,7 +4830,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnTradeClosed(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'TRADE_CLOSED',callback)},
+        OnTradeClosed(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'TRADE_CLOSED',callback)},
 
         /**
          *
@@ -4794,7 +4838,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnTradeCurrencyChanged(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'TRADE_CURRENCY_CHANGED',callback)},
+        OnTradeCurrencyChanged(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'TRADE_CURRENCY_CHANGED',callback)},
 
         /**
          *
@@ -4802,7 +4846,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnTradeMoneyChanged(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'TRADE_MONEY_CHANGED',callback)},
+        OnTradeMoneyChanged(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'TRADE_MONEY_CHANGED',callback)},
 
         /**
          * Not initially fired when trading is started by dropping an item on target.
@@ -4836,7 +4880,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnTradeRequestCancel(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'TRADE_REQUEST_CANCEL',callback)},
+        OnTradeRequestCancel(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'TRADE_REQUEST_CANCEL',callback)},
 
         /**
          *
@@ -4844,7 +4888,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnTradeShow(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'TRADE_SHOW',callback)},
+        OnTradeShow(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'TRADE_SHOW',callback)},
 
         /**
          *
@@ -4860,7 +4904,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnTradeUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'TRADE_UPDATE',callback)},
+        OnTradeUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'TRADE_UPDATE',callback)},
     },
     TradeSkillUI: {
         /**
@@ -4869,7 +4913,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnTradeSkillClose(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'TRADE_SKILL_CLOSE',callback)},
+        OnTradeSkillClose(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'TRADE_SKILL_CLOSE',callback)},
 
         /**
          *
@@ -4877,7 +4921,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnTradeSkillNameUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'TRADE_SKILL_NAME_UPDATE',callback)},
+        OnTradeSkillNameUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'TRADE_SKILL_NAME_UPDATE',callback)},
 
         /**
          *
@@ -4885,7 +4929,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnTradeSkillShow(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'TRADE_SKILL_SHOW',callback)},
+        OnTradeSkillShow(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'TRADE_SKILL_SHOW',callback)},
 
         /**
          *
@@ -4893,7 +4937,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnUpdateTradeskillRecast(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'UPDATE_TRADESKILL_RECAST',callback)},
+        OnUpdateTradeskillRecast(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'UPDATE_TRADESKILL_RECAST',callback)},
     },
     Trainer: {
         /**
@@ -4902,7 +4946,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnTrainerClosed(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'TRAINER_CLOSED',callback)},
+        OnTrainerClosed(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'TRAINER_CLOSED',callback)},
 
         /**
          *
@@ -4910,7 +4954,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnTrainerDescriptionUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'TRAINER_DESCRIPTION_UPDATE',callback)},
+        OnTrainerDescriptionUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'TRAINER_DESCRIPTION_UPDATE',callback)},
 
         /**
          *
@@ -4918,7 +4962,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnTrainerShow(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'TRAINER_SHOW',callback)},
+        OnTrainerShow(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'TRAINER_SHOW',callback)},
 
         /**
          *
@@ -4926,7 +4970,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnTrainerUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'TRAINER_UPDATE',callback)},
+        OnTrainerUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'TRAINER_UPDATE',callback)},
     },
     Transmog: {
         /**
@@ -4935,7 +4979,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnTransmogrifyClose(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'TRANSMOGRIFY_CLOSE',callback)},
+        OnTransmogrifyClose(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'TRANSMOGRIFY_CLOSE',callback)},
 
         /**
          *
@@ -4943,7 +4987,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnTransmogrifyOpen(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'TRANSMOGRIFY_OPEN',callback)},
+        OnTransmogrifyOpen(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'TRANSMOGRIFY_OPEN',callback)},
 
         /**
          *
@@ -4951,7 +4995,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnTransmogrifySuccess(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'TRANSMOGRIFY_SUCCESS',callback)},
+        OnTransmogrifySuccess(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'TRANSMOGRIFY_SUCCESS',callback)},
 
         /**
          *
@@ -4959,7 +5003,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnTransmogrifyUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'TRANSMOGRIFY_UPDATE',callback)},
+        OnTransmogrifyUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'TRANSMOGRIFY_UPDATE',callback)},
     },
     Tutorial: {
         /**
@@ -4978,7 +5022,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnUiScaleChanged(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'UI_SCALE_CHANGED',callback)},
+        OnUiScaleChanged(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'UI_SCALE_CHANGED',callback)},
     },
     Vehicle: {
         /**
@@ -5056,7 +5100,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnVehiclePassengersChanged(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'VEHICLE_PASSENGERS_CHANGED',callback)},
+        OnVehiclePassengersChanged(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'VEHICLE_PASSENGERS_CHANGED',callback)},
 
         /**
          *
@@ -5072,7 +5116,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnVehicleUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'VEHICLE_UPDATE',callback)},
+        OnVehicleUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'VEHICLE_UPDATE',callback)},
     },
     VideoOptions: {
         /**
@@ -5081,7 +5125,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnDisplaySizeChanged(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'DISPLAY_SIZE_CHANGED',callback)},
+        OnDisplaySizeChanged(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'DISPLAY_SIZE_CHANGED',callback)},
 
         /**
          *
@@ -5089,7 +5133,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnScreenshotFailed(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'SCREENSHOT_FAILED',callback)},
+        OnScreenshotFailed(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'SCREENSHOT_FAILED',callback)},
 
         /**
          *
@@ -5097,7 +5141,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnScreenshotSucceeded(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'SCREENSHOT_SUCCEEDED',callback)},
+        OnScreenshotSucceeded(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'SCREENSHOT_SUCCEEDED',callback)},
     },
     VoidStorageInfo: {
         /**
@@ -5115,7 +5159,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnVoidStorageClose(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'VOID_STORAGE_CLOSE',callback)},
+        OnVoidStorageClose(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'VOID_STORAGE_CLOSE',callback)},
 
         /**
          *
@@ -5123,7 +5167,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnVoidStorageContentsUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'VOID_STORAGE_CONTENTS_UPDATE',callback)},
+        OnVoidStorageContentsUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'VOID_STORAGE_CONTENTS_UPDATE',callback)},
 
         /**
          *
@@ -5139,7 +5183,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnVoidStorageOpen(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'VOID_STORAGE_OPEN',callback)},
+        OnVoidStorageOpen(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'VOID_STORAGE_OPEN',callback)},
 
         /**
          *
@@ -5147,7 +5191,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnVoidStorageUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'VOID_STORAGE_UPDATE',callback)},
+        OnVoidStorageUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'VOID_STORAGE_UPDATE',callback)},
 
         /**
          *
@@ -5155,7 +5199,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnVoidTransferDone(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'VOID_TRANSFER_DONE',callback)},
+        OnVoidTransferDone(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'VOID_TRANSFER_DONE',callback)},
     },
     WorldStateInfo: {
         /**
@@ -5199,7 +5243,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnAutofollowEnd(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'AUTOFOLLOW_END',callback)},
+        OnAutofollowEnd(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'AUTOFOLLOW_END',callback)},
 
         /**
          *
@@ -5207,7 +5251,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnCancelSummon(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'CANCEL_SUMMON',callback)},
+        OnCancelSummon(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'CANCEL_SUMMON',callback)},
 
         /**
          *
@@ -5248,7 +5292,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnLocalplayerPetRenamed(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'LOCALPLAYER_PET_RENAMED',callback)},
+        OnLocalplayerPetRenamed(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'LOCALPLAYER_PET_RENAMED',callback)},
 
         /**
          *
@@ -5286,7 +5330,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPetBarUpdateUsable(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PET_BAR_UPDATE_USABLE',callback)},
+        OnPetBarUpdateUsable(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PET_BAR_UPDATE_USABLE',callback)},
 
         /**
          *
@@ -5294,7 +5338,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPetUiUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PET_UI_UPDATE',callback)},
+        OnPetUiUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PET_UI_UPDATE',callback)},
 
         /**
          *
@@ -5313,7 +5357,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPlayerEnterCombat(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PLAYER_ENTER_COMBAT',callback)},
+        OnPlayerEnterCombat(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PLAYER_ENTER_COMBAT',callback)},
 
         /**
          *
@@ -5321,7 +5365,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPlayerFarsightFocusChanged(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PLAYER_FARSIGHT_FOCUS_CHANGED',callback)},
+        OnPlayerFarsightFocusChanged(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PLAYER_FARSIGHT_FOCUS_CHANGED',callback)},
 
         /**
          * WoW condenses simultaneous flag changes into a single event. If you are currently AFK and not(DND) but you type /dnd you'll see two Chat Log messages ("You are no longer AFK" and "You are now DND: Do Not Disturb") but you'll only see a single PLAYER_FLAGS_CHANGED event.
@@ -5338,7 +5382,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPlayerFocusChanged(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PLAYER_FOCUS_CHANGED',callback)},
+        OnPlayerFocusChanged(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PLAYER_FOCUS_CHANGED',callback)},
 
         /**
          *
@@ -5346,7 +5390,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPlayerLeaveCombat(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PLAYER_LEAVE_COMBAT',callback)},
+        OnPlayerLeaveCombat(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PLAYER_LEAVE_COMBAT',callback)},
 
         /**
          *
@@ -5386,7 +5430,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPlayerRegenDisabled(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PLAYER_REGEN_DISABLED',callback)},
+        OnPlayerRegenDisabled(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PLAYER_REGEN_DISABLED',callback)},
 
         /**
          *
@@ -5394,7 +5438,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPlayerRegenEnabled(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PLAYER_REGEN_ENABLED',callback)},
+        OnPlayerRegenEnabled(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PLAYER_REGEN_ENABLED',callback)},
 
         /**
          *
@@ -5402,7 +5446,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPlayerTargetChanged(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PLAYER_TARGET_CHANGED',callback)},
+        OnPlayerTargetChanged(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PLAYER_TARGET_CHANGED',callback)},
 
         /**
          *
@@ -5410,7 +5454,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPlayerUpdateResting(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PLAYER_UPDATE_RESTING',callback)},
+        OnPlayerUpdateResting(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PLAYER_UPDATE_RESTING',callback)},
 
         /**
          *
@@ -5530,7 +5574,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnUnitHealth(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'UNIT_HEALTH',callback)},
+        OnUnitHealth(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'UNIT_HEALTH',callback)},
 
         /**
          * This event is not triggered when equipping/unequipping rings or trinkets.
@@ -5567,7 +5611,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnUnitMana(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'UNIT_MANA',callback)},
+        OnUnitMana(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'UNIT_MANA',callback)},
 
         /**
          *
@@ -5830,7 +5874,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnUnitThreatListUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'UNIT_THREAT_LIST_UPDATE',callback)},
+        OnUnitThreatListUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'UNIT_THREAT_LIST_UPDATE',callback)},
 
         /**
          *
@@ -5838,7 +5882,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnUnitThreatSituationUpdate(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'UNIT_THREAT_SITUATION_UPDATE',callback)},
+        OnUnitThreatSituationUpdate(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'UNIT_THREAT_SITUATION_UPDATE',callback)},
 
         /**
          *
@@ -5846,7 +5890,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnUpdateExhaustion(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'UPDATE_EXHAUSTION',callback)},
+        OnUpdateExhaustion(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'UPDATE_EXHAUSTION',callback)},
 
         /**
          * Fired when the target of the "mouseover" [[UnitId]] has changed and is a 3d model. (Does not fire when {{api|UnitExists}}("mouseover") becomes nil, or if you mouse over a unitframe.)
@@ -5855,7 +5899,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnUpdateMouseoverUnit(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'UPDATE_MOUSEOVER_UNIT',callback)},
+        OnUpdateMouseoverUnit(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'UPDATE_MOUSEOVER_UNIT',callback)},
 
         /**
          *
@@ -5863,7 +5907,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnUpdateStealth(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'UPDATE_STEALTH',callback)},
+        OnUpdateStealth(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'UPDATE_STEALTH',callback)},
 
         /**
          *
@@ -5881,7 +5925,7 @@ export const Events = {
          *
          * @param args 
          */
-        OnPlaytimeChanged(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'PLAYTIME_CHANGED',callback)},
+        OnPlaytimeChanged(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'PLAYTIME_CHANGED',callback)},
 
         /**
          *
@@ -5889,6 +5933,6 @@ export const Events = {
          *
          * @param args 
          */
-        OnTrialCapReachedLevel(frame: WoWAPI.Frame, callback: (args: any[])=>void) { addEvent(frame,'TRIAL_CAP_REACHED_LEVEL',callback)},
+        OnTrialCapReachedLevel(frame: WoWAPI.Frame, callback: (...args: any[])=>void) { addEvent(frame,'TRIAL_CAP_REACHED_LEVEL',callback)},
     },
 }
