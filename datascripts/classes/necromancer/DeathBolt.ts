@@ -13,10 +13,10 @@ DEATH_BOLT_ABILITY.setAutolearn();
 const DEATH_COIL = std.Spells.load(47541)
 
 // Copy the missile model
-DEATH_BOLT.Visual.MissileModel.set(DEATH_COIL.Visual.MissileModel.get())
+DEATH_BOLT.Visual.MissileModel.setID(DEATH_COIL.Visual.MissileModel.ID)
 
 // Copy the impact visual kit
-DEATH_BOLT.Visual.Kits.Impact.cloneFrom(DEATH_COIL.Visual.Kits.Impact)
+DEATH_BOLT.ImpactKit.cloneFrom(DEATH_COIL.ImpactKit)
 
 DEATH_BOLT.Icon.set(DEATH_COIL.Icon.get());
 

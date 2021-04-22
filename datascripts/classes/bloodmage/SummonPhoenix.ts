@@ -8,7 +8,7 @@ const PHOENIX_DISPLAYINFO = DBC.CreatureDisplayInfo
 
 export const PHOENIX = std.CreatureTemplates
     .create(TSWOW_TESTMODULE,'phoenix', 416)
-    .Models.set([PHOENIX_DISPLAYINFO.ID.get()])
+    .Models.addIds(PHOENIX_DISPLAYINFO.ID.get())
     .Name.set({enGB:'Phoenix'})
 
 export const SUMMON_PHOENIX = std.Spells

@@ -24,7 +24,7 @@ export const TRANSFORM = std.Spells
     .SkillLines.add(ILLUSION.ID).setAutolearn().end
     .Effects.add().EffectType.setDummy().end
     .Icon.set('Interface\\Icons\\Ability_Rogue_Disguise.blp')
-    .Visual.cloneFrom(1856,true)
+    .Visual.cloneFromSpell(1856)
     
 export const SPECIAL_BLINK = std.Spells
     .create(TSWOW_TESTMODULE,'specialblink',2120)
@@ -32,4 +32,4 @@ export const SPECIAL_BLINK = std.Spells
     .CastTime.set(0,0,0)
 
 SPECIAL_BLINK.Effects.clearAll()
-SPECIAL_BLINK.Visual.cloneFrom(1953)
+SPECIAL_BLINK.Visual.cloneFromSpell(1953)

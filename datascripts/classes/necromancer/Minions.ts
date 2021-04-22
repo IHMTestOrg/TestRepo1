@@ -7,7 +7,7 @@ const totems : TotemType[] = ['EARTH','AIR','WATER','FIRE']
 
 function makeSummon(index: number, name: string, displayName: string, modelId: number, icon: string, scale = 1) {
     const entity = std.CreatureTemplates.create(TSWOW_TESTMODULE,`${name}-${index}`,416);
-    entity.Models.set([modelId]);
+    entity.Models.addIds(modelId);
     entity.Name.enGB.set(`${displayName}`);
     const summon_spell = std.Spells.TotemCreatures
         .createSummon(TSWOW_TESTMODULE,`summon-${name}-${index}`, totems[index], entity.ID);

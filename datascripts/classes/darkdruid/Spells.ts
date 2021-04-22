@@ -14,7 +14,7 @@ export const ACIDIC_BITE = std.Spells.create(TSWOW_TESTMODULE,'acidic-bite',6463
     .Attributes.meleeCombatStart.mark()
 
 export const SCARAB = std.CreatureTemplates.create(TSWOW_TESTMODULE,'scarab',28017)
-    .Models.set([13096]);
+    .Models.addIds(13096);
 
 const SPAWN_SCARAB_PROC = std.Spells.create(TSWOW_TESTMODULE,'spawn-scarab-proc',50452)
     .Effects.get(0).MiscValueA.set(SCARAB.ID).end

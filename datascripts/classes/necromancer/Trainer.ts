@@ -8,7 +8,7 @@ import { TSWOW_TESTMODULE } from "../../tswow-testmodule";
 export const NECRO_TRAINER_HUMAN = 
     std.CreatureTemplates.create(TSWOW_TESTMODULE,'necromancer-trainer-human',375)
     .Name.enGB.set('Wilson Carter')
-    .Title.enGB.set('Necromancy Trainer')
+    .Subname.enGB.set('Necromancy Trainer')
     .Trainer.Greeting.enGB.set(`Necromancy is like baseball, I know nothing of either.`)
     .Class.set(NECROMANCER_CLASS.ID)
         .addSpell(SUMMON_ABOMINATION.ID,10,5)
@@ -19,7 +19,7 @@ export const NECRO_TRAINER_HUMAN =
 export const NECRO_TRAINER_ORC = 
     std.CreatureTemplates.create(TSWOW_TESTMODULE,'necromancer-trainer-orc',3156)
     .Name.enGB.set('Orc Name')
-    .Title.enGB.set('Necromancy Trainer')
+    .Subname.enGB.set('Necromancy Trainer')
     .Trainer.Greeting.enGB.set(`Zug zug dabou loktar ogar.`)
     .Class.set(NECROMANCER_CLASS.ID)
     .Class.set(NECROMANCER_CLASS.ID)
