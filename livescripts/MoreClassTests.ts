@@ -10,7 +10,7 @@ export function MoreClassTests(events: TSEventHandlers) {
             type.ToPlayer().SendBroadcastMessage("Delayed message");
         });
 
-        player.GetCollisions().Add(ModID(),"key",10,1000,0,(e,s,c,can)=>{
+        player.AddCollision("key",10,1000,0,(e,s,c,can)=>{
             s.ToPlayer().SendBroadcastMessage("Colliding with "+c.GetName());
         });
     });
