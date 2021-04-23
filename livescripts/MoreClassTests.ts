@@ -6,7 +6,7 @@ export function MoreClassTests(events: TSEventHandlers) {
     events.Player.OnSay((player,type,lang,msg)=>{
         console.log(player.GetObject("key",new Teste()).io++);
 
-        player.GetTasks().AddTimer("lole",1000,1,(timer,type,del,can)=>{
+        player.AddTimer("lole",1000,1,(timer,type,del,can)=>{
             type.ToPlayer().SendBroadcastMessage("Delayed message");
         });
 
