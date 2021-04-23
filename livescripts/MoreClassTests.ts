@@ -4,9 +4,9 @@ class Teste {
 
 export function MoreClassTests(events: TSEventHandlers) {
     events.Player.OnSay((player,type,lang,msg)=>{
-        console.log(player.GetData().GetObject<Teste>(ModID(),"key",()=>new Teste()).io++);
+        console.log(player.GetObject("key",new Teste()).io++);
 
-        player.GetTasks().AddTimer(ModID(),"lole",1000,1,(timer,type,del,can)=>{
+        player.GetTasks().AddTimer("lole",1000,1,(timer,type,del,can)=>{
             type.ToPlayer().SendBroadcastMessage("Delayed message");
         });
 
