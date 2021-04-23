@@ -1,29 +1,25 @@
 export function FormulaTests(events: TSEventHandlers) {
-    events.Formula.OnBaseGainCalculation((gain,level,moblevel,content)=>{
-        console.log("hi?");
-    });
-
-    events.Formula.OnColorCodeCalculation((color,level,moblevel)=>{
-        console.log("Color code calculation");
-    });
-
-    events.Formula.OnGainCalculation((gain,player,unit)=>{
-        player.SendBroadcastMessage("Doing a gain calculation");
-    });
-
-    events.Formula.OnGrayLevelCalculation((graylevel,playerlevel)=>{
-        console.log("Calculating gray level");
-    });
-
-    events.Formula.OnGroupRateCalculation((rate,count,israid)=>{
-        console.log("Group rate calculation");
-    });
-
-    events.Formula.OnHonorCalculation((honor,level,multiplier)=>{
-        console.log("Honor calculation");
-    }),
-
-    events.Formula.OnZeroDifferenceCalculation((diff,playerlevel)=>{
-        console.log("Zero difference calculation");
-    });
+    events.Formula.OnBaseGainCalculation((g,p,m,c)=>{});
+    events.Formula.OnColorCodeCalculation((c,p,m)=>{});
+    events.Formula.OnGrayLevelCalculation((g,p)=>{})
+    events.Formula.OnGroupRateCalculation((r,c,i)=>{})
+    events.Formula.OnHonorCalculation((h,l,m)=>{})
+    events.Formula.OnIntellectManaBonus((p,b,bi,m)=>{})
+    events.Formula.OnManaRegen((p,pl,pr,mri)=>{})
+    events.Formula.OnMaxHealth((p,h)=>{})
+    events.Formula.OnMaxPower((p,po,b,v)=>{})
+    events.Formula.OnMeleeDamageEarly((p,t,i,d)=>{})
+    events.Formula.OnMeleeDamageLate((m,t,i,d)=>{})
+    events.Formula.OnMeleeOutcome((a,v,at,m,c,d,b,p)=>{})
+    events.Formula.OnPeriodicDamage((a,d)=>{})
+    events.Formula.OnSpellAuraCrit((s,cr)=>{})
+    events.Formula.OnSpellCrit((s,c)=>{})
+    events.Formula.OnSpellDamageEarly((i,sp,typ,cri,dam)=>{})
+    events.Formula.OnSpellDamageLate((i,sp,typ,cri,dam)=>{})
+    events.Formula.OnSpellDeflect((a,v,i,d)=>{})
+    events.Formula.OnSpellHit((a,v,i,h)=>{})
+    events.Formula.OnSpellReflect((a,v,i,r)=>{})
+    events.Formula.OnSpellResist((a,v,i,r)=>{})
+    events.Formula.OnStaminaHealthBonus((p,b,bo,m)=>{})
+    events.Formula.OnZeroDifferenceCalculation((d,p)=>{})
 }

@@ -11,7 +11,6 @@ import { ListTests } from "./ListTests";
 import { MethodsTests } from "./MethodsTests";
 import { PlayerTests } from "./PlayerTests";
 import { SpellTests } from "./SpellTests";
-import { UnitTests } from "./UnitTests";
 import { WorldTests } from "./WorldTests";
 import { DatabaseTests } from "./DatabaseTests";
 import { SubdirTest } from "./subdir/SubdirTest";
@@ -58,7 +57,7 @@ export function Main(events: TSEventHandlers) {
     SpellTests(events);
     CreatureTests(events);
     PlayerTests(events);
-    UnitTests(events);
+    FormulaTests(events);
     AccountTests(events);
     WorldTests(events);
     GuildTests(events);
