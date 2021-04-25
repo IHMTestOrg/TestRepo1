@@ -1,5 +1,5 @@
 import { std } from "tswow-stdlib";
-import { Ids } from "tswow-stdlib/Base/Ids";
+import { Ids } from "tswow-stdlib/Misc/Ids";
 import { DBC } from "wotlkdata/dbc/DBCFiles";
 import { TSWOW_TESTMODULE } from "../../tswow-testmodule";
 import { BLOOD_MAGIC_SKILL } from "./BloodMage";

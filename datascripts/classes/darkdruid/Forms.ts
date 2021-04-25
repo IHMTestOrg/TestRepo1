@@ -1,6 +1,6 @@
 import { std } from "tswow-stdlib";
 import { DBC } from 'wotlkdata';
-import { Ids } from 'tswow-stdlib/Base/Ids';
+import { Ids } from 'tswow-stdlib/Misc/Ids';
 import { METAMORPHOSIS } from "./DarkDruid";
 import { TSWOW_TESTMODULE } from "../../tswow-testmodule";
 
