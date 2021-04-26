@@ -2,7 +2,7 @@ import { std } from "tswow-stdlib";
 import { TSWOW_TESTMODULE } from "../../tswow-testmodule";
 
 export const ILLUSIONIST = std.Classes
-    .create(TSWOW_TESTMODULE,'illusionist','ILLUSIONIST','MAGE')
+    .create(TSWOW_TESTMODULE,'illusionist','MAGE')
     .addRaces(['HUMAN','BLOODELF','DRAENEI','GNOME','TROLL'])
     .Name.set({enGB:'Illusionist'})
     .StartGear.Chest.set(43761)

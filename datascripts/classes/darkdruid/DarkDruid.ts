@@ -10,7 +10,7 @@ const DRUID_SHOULDERS = std.Items
     .RequiredLevel.set(1)
 
 export const DARK_DRUID = std.Classes
-    .create(TSWOW_TESTMODULE,'darkdruid','DARKDRUID','MAGE')
+    .create(TSWOW_TESTMODULE,'darkdruid','MAGE')
     .addRaces(['HUMAN','NIGHTELF','DWARF','ORC','UNDEAD'])
     .Name.set({enGB:'Dark Druid'})
     .EquipSkills.Staves.setAuto()

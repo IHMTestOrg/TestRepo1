@@ -5,7 +5,7 @@ export const PIRATE_HAT = std.Items.create(TSWOW_TESTMODULE,'pirate-hat',2955)
     .RequiredLevel.set(1)
 
 export const PIRATE = std.Classes
-    .create(TSWOW_TESTMODULE,'pirate','PIRATE','ROGUE')
+    .create(TSWOW_TESTMODULE,'pirate','ROGUE')
     .addRaces(['HUMAN','NIGHTELF','DWARF','ORC','UNDEAD'])
     .Name.set({enGB:'Pirate'})
     .UI.TCoords.set(0.25,0.5,0.75,1)

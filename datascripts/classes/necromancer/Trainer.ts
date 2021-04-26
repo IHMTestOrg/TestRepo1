@@ -1,6 +1,6 @@
 import { std } from "tswow-stdlib";
 import { SUMMON_ABOMINATION } from "./SummonAbomination";
-import { NECROMANCER_CLASS } from "./Necromancer";
+import { NECROMANCER_CLASS, NECROMANCY_SKILL } from "./Necromancer";
 import { BONE_SHIELD } from "./BoneShield";
 import { Pos } from "tswow-stdlib/Misc/Position";
 import { TSWOW_TESTMODULE } from "../../tswow-testmodule";
@@ -11,7 +11,7 @@ export const NECRO_TRAINER_HUMAN =
     .Subname.enGB.set('Necromancy Trainer')
     .Trainer.Greeting.enGB.set(`Necromancy is like baseball, I know nothing of either.`)
     .Class.set(NECROMANCER_CLASS.ID)
-        .addSpell(SUMMON_ABOMINATION.ID,10,5)
+        .addSpell(SUMMON_ABOMINATION.ID,10,5,NECROMANCY_SKILL.ID,0,[])
         .addSpell(BONE_SHIELD.ID,10,10)
     .end
     .spawn(TSWOW_TESTMODULE,'trainer-instance-ally',Pos(0,-8898.656250,-130.632767,81.285889,1.766019))

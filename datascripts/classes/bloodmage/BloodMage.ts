@@ -8,7 +8,7 @@ std.Items.load(34399).RequiredLevel.set(1)
 std.Items.load(30924).RequiredLevel.set(1)
 
 export const BLOODMAGE = std.Classes
-    .create(TSWOW_TESTMODULE,'bloodmage-class','BLOODMAGE','MAGE')
+    .create(TSWOW_TESTMODULE,'bloodmage','MAGE')
     .addRaces(['BLOODELF','HUMAN'])
     .Name.set({enGB:'Blood Mage'})
     .EquipSkills.Staves.setAuto()

@@ -2,7 +2,7 @@ import { std } from 'tswow-stdlib';
 import { TSWOW_TESTMODULE } from '../../tswow-testmodule';
 
 export const NECROMANCER_CLASS = 
-    std.Classes.create(TSWOW_TESTMODULE,'necromancer','NECROMANCER','MAGE');
+    std.Classes.create(TSWOW_TESTMODULE,'necromancer','MAGE');
 
 export const NECROMANCER_ROBE =
     std.Items.create(TSWOW_TESTMODULE,'cls',56)
