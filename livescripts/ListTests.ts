@@ -8,7 +8,6 @@ function listFunction(arr: TSArray<uint32>) {
 export function ListTests(events: TSEventHandlers) {
     let ls1: TSArray<int32> = [1,2,3];
     console.log("[reduce] This is 6:",ls1.reduce((p,c,i)=>p+c,0));
-
     let ls2: TSArray<int32> = [4];
     let ls3 = ls1.concat(ls2);
 

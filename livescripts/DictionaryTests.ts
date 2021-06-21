@@ -16,7 +16,7 @@ export function DictionaryTests(events: TSEventHandlers) {
     const keys = d1.keys();
     for(let i=0;i<keys.length;++i) {
         let key = keys.get(i);
-        console.log(key,d1.get(key));
+        console.log(key,d1[key]);
     }
 
     const d2 = d1.filter((k,v)=>v=='b');
@@ -25,7 +25,7 @@ export function DictionaryTests(events: TSEventHandlers) {
     d2.set(3,"c");
     console.log("[set] This is true false:",d2.contains(3),d1.contains(3));
     d2.set(3,"d");
-    console.log("[set] This is 'd':",d2.get(3));
+    console.log("[set] This is 'd':",d2[3]);
 
     console.log("[forEach]: Below is 2b, 3d")
     d2.forEach((k,v)=>{
