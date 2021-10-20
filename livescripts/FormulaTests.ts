@@ -1,0 +1,25 @@
+export function FormulaTests(events: TSEventHandlers) {
+    events.Formula.OnBaseGainCalculation((g,p,m,c)=>{});
+    events.Formula.OnColorCodeCalculation((c,p,m)=>{});
+    events.Formula.OnGrayLevelCalculation((g,p)=>{})
+    events.Formula.OnGroupRateCalculation((r,c,i)=>{})
+    events.Formula.OnHonorCalculation((h,l,m)=>{})
+    events.Formula.OnIntellectManaBonus((p,b,bi,m)=>{})
+    events.Formula.OnManaRegen((p,pl,pr,mri)=>{})
+    events.Formula.OnMaxHealth((p,h)=>{})
+    events.Formula.OnMaxPower((p,po,b,v)=>{})
+    events.Formula.OnMeleeDamageEarly((p,t,i,d)=>{})
+    events.Formula.OnMeleeDamageLate((m,t,i,d)=>{})
+    events.Formula.OnMeleeOutcome((a,v,at,m,c,d,b,p)=>{})
+    events.Formula.OnPeriodicDamage((a,d)=>{})
+    events.Formula.OnSpellAuraCrit((s,cr)=>{})
+    events.Formula.OnSpellCrit((s,c)=>{})
+    events.Formula.OnSpellDamageEarly((i,sp,typ,cri,dam)=>{})
+    events.Formula.OnSpellDamageLate((i,sp,typ,cri,dam)=>{})
+    events.Formula.OnSpellDeflect((a,v,i,d)=>{})
+    events.Formula.OnSpellHit((a,v,i,h)=>{})
+    events.Formula.OnSpellReflect((a,v,i,r)=>{})
+    events.Formula.OnSpellResist((a,v,i,r)=>{})
+    events.Formula.OnStaminaHealthBonus((p,b,bo,m)=>{})
+    events.Formula.OnZeroDifferenceCalculation((d,p)=>{})
+}
